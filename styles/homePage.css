@@ -119,14 +119,6 @@
         .nav a:hover { color: var(--text); }
 
       
-        .btn {
-            appearance: none;
-            border: 0;
-            border-radius: 999px;
-            padding: 12px 18px;
-            font-weight: 800;
-            cursor: pointer;
-        }
         .btn-primary {
             background: var(--accent);
             color: white;
