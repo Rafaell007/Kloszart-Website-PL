@@ -1,0 +1,1 @@
+const textEl = document.querySelector('.text-animation');

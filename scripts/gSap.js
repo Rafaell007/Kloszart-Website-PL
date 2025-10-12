@@ -82,31 +82,74 @@ const stackStage = document.querySelector('.stack-container');
 const splitEl = document.querySelector('.split');
 const stackItems = document.querySelectorAll('.stack-item');
 
-// pin + stack timeline
+// ===== GŁÓWNA ANIMACJA STACKOWANIA =====
+// pin + stack timeline (maksymalnie skrócona sekwencja)
 const stackTl = gsap.timeline({
     scrollTrigger: {
-        trigger: stackSection,
-        start: 'top+=100 top',
-        end: '+=2000', // długość sekwencji stackowania
-        scrub: true,
-        pin: stackStage, // przypinamy widoczną scenę
-        markers: true // usuń po testach
+        trigger: stackSection, // element, który uruchamia animację
+        
+        // start: kiedy animacja się rozpoczyna
+        // 'top top' = górna krawędź .stack-section dotknie górę viewportu
+        // 'top-=200 top' = zaczyna 200px PRZED dotknięciem góry (wcześniej, powyżej)
+        // 'top+=100 top' = zaczyna 100px PO dotknięciu góry (później)
+        // ZWIĘKSZ ujemną wartość = jeszcze wcześniej/wyżej (np. 'top-=300', 'top-=400')
+        start: 'top-=100px top',
+        
+        // end: długość scrollu dla całej animacji
+        // Wartość (stackItems.length * 400 + 400) = dla 4 obrazów: 2000px scrollu
+        // ZWIĘKSZ 400 → wolniejsze stackowanie, dłuższy wjazd (np. 500, 600)
+        // ZMNIEJSZ 400 → szybsze stackowanie (np. 300, 250)
+        // ZWIĘKSZ 400 → więcej czasu na końcowy wyjazd
+        end: () => '+=' + (stackItems.length * 400 + 400),
+        
+        scrub: true, // animacja związana z scrollem (smooth follow)
+        pin: stackSection, // przypina całą sekcję podczas animacji
+        anticipatePin: 1, // zapobiega mrugnięciu przy pinowaniu
+        markers: true //  (pokazuje start/end triggera)
     }
 });
 
-// Pin dla tekstu .split (stoi w miejscu na czas całej sekwencji)
-ScrollTrigger.create({
-    trigger: stackSection,
-    start: 'top 10%',
-    end: '+=2000',
-    pin: splitEl,
-    pinSpacing: true, // zostawia miejsce, tekst nie przeskakuje
-    markers: true // usuń po testach
-});
+// Nie pinujemy .split osobno - będzie się ruszał razem ze stosem na końcu
 
+// ===== ANIMACJA WJAZDÓW OBRAZKÓW =====
 // każdy kolejny obraz dojeżdża i zostaje (opacity -> 1)
 stackItems.forEach((item, i) => {
-    const rot = gsap.utils.random(-8, 8, 1, true)();
-    gsap.set(item, { opacity: 0, y: 80, scale: 0.98, rotate: rot, zIndex: i + 1 });
-    stackTl.to(item, { opacity: 1, y: 0, scale: 1, duration: 0.9, ease: 'power2.out' }, i * 0.6);
+    // Losowy obrót dla każdego obrazka (-12° do +12°) - większy zakres dla lepszej widoczności
+    const rot = gsap.utils.random(-12, 12, 1, true)();
+    
+    // Stan początkowy obrazka (niewidoczny, niżej, lekko zmniejszony)
+    // y: 350 → odległość od końcowej pozycji (ZWIĘKSZ = dalszy/dłuższy wjazd, np. 400, 500)
+    // scale: 0.98 → lekkie powiększenie podczas wjazdu (ZMNIEJSZ = bardziej zoom, np. 0.95)
+    // rotate: rot → losowy kąt obrotu
+    gsap.set(item, { opacity: 0, y: 350, scale: 0.98, rotate: rot, zIndex: i + 1 });
+    
+    // Animacja wjazdu do pozycji docelowej
+    // duration: 2 → jak długo trwa wjazd pojedynczego obrazka (ZWIĘKSZ = wolniej)
+    // ease: 'power2.out' → krzywa wygładzenia (spróbuj: 'back.out', 'elastic.out')
+    // i * 1.5 → opóźnienie między kolejnymi obrazkami - większe odstępy = lepiej widać każdy
+    // ZWIĘKSZ 1.5 → jeszcze większe przerwy (np. 2.0, 2.5)
+    stackTl.to(item, { 
+        opacity: 1, 
+        y: 0, 
+        scale: 1, 
+        duration: 2, 
+        ease: 'power2.out' 
+    }, i * 1.5);
 });
+
+// ===== KOŃCOWY WYJAZD STOSU I TEKSTU =====
+// Na końcu: przesuwamy jednocześnie tekst i stos w górę poza ekran
+// "+=0.3" → pauza przed wyjazdm (ZWIĘKSZ = dłuższa pauza, np. 0.5, 1.0)
+stackTl.to([splitEl, stackStage], { 
+    // y: -window.innerHeight → przesuwa w górę o wysokość ekranu (= znika z widoku)
+    // ZMIEŃ na -window.innerHeight * 0.5 → mniejszy wyjazd
+    // ZMIEŃ na -window.innerHeight * 1.2 → większy wyjazd
+    y: -window.innerHeight,
+    
+    // ease: 'power1.inOut' → płynne przyspieszenie i zwolnienie
+    // Spróbuj: 'power2.inOut', 'expo.inOut', 'none' (liniowy)
+    ease: 'power1.inOut', 
+    
+    // duration: 1 → jak długo trwa wyjazd (ZWIĘKSZ = wolniej, np. 1.5, 2)
+    duration: 4 
+}, "+=0.3");

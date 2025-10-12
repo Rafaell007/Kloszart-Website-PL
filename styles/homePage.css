@@ -61,14 +61,12 @@
             box-shadow:
             0 80px 160px 98px rgba(0,0,0,.65),  
             0 28px 60px 10px rgba(0,0,0,.55),   
-            0 4px 8px rgba(0,0,0,.60);         
-                    
-                        
+            0 4px 8px rgba(0,0,0,.60);                 
             overflow: hidden;
              border:4px solid rgba(0, 0, 0, 0.9);
             max-width: 1400px;
            min-height: 80vh;
-            margin: 82px auto;
+            margin: 82px auto 100px;
             padding: 0 20px;
         }
         .content-wrap{
@@ -243,37 +241,65 @@
            
           }
 
+/* ===== TEKST NAD STOSEM ===== */
  .split {
-    font-size: 15px;
- margin-top: 300px;
     text-align: center;
-    letter-spacing: 0.05rem;
-    overflow: hidden; 
-    padding-top: 30px;
+    padding: 25px 40px;
+    max-width: 1200px;
+    margin: 0 auto;
 }
+
+.split p {
+    font-family: Mori, 'Inter', sans-serif;
+    font-size: clamp(18px, 2.2vw, 28px);  
+    line-height: 1.8;
+    letter-spacing: 0.02em;
+    font-weight: 400;
+    background: linear-gradient(
+        135deg,
+        rgba(253, 253, 253, 0.95) 0%,
+        rgba(179, 161, 161, 0.75) 50%,
+        rgba(138, 99, 99, 0.85) 100%
+    );
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.15));
+}
+
+.text-animation{
+ opacity: 0;
+ transform: translateY(50%);   
+ transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+.text-animation.visible{
+    opacity: 1;
+    transform: translateY(0);
+}
+
 
 
 .stack-section {
+    padding-top: 30px;
+    width: 100%;
     position: relative;
-    height: 300vh;
 }
 
 .stack-container {
-    
+    display: flex;
     position: relative;
-    width: 100%;
-    height: 100vh; 
+    height: 70vh;
     z-index: 2;
+    justify-content: center;
+    top: 20px;
 }
 
 .stack-item {
     position: absolute; 
-    
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
     opacity: 0; 
 }
+
 
 .stack-img {
     width: auto;
@@ -281,6 +307,31 @@
     border-radius: 20px;
     display: block;
     box-shadow: 0 20px 40px rgba(0,0,0,0.2);
-
 }
 
+
+/* ===== NASTĘPNA SEKCJA (PO STOSIE) ===== */
+/* Następna sekcja - normalny przepływ, podciągnięta bliżej */
+.next-section {
+    position: relative;
+    background: var(--bg);
+    padding: 50px 0;
+    
+    /* margin-top: -70vh → podciąga sekcję bliżej stosu, kompensując pin-spacer */
+    /* ZWIĘKSZ ujemną wartość = bliżej stosu (np. -80vh, -90vh) */
+    /* ZMNIEJSZ ujemną wartość = dalej od stosu (np. -60vh, -50vh) */
+    /* USUŃ całkowicie = standardowy odstęp */
+    margin-top: -70vh;
+    text-align: center;
+}
+
+.next-section h2 {
+    font-size: 48px;
+    margin-bottom: 20px;
+    color: var(--text);
+}
+
+.next-section p {
+    font-size: 18px;
+    color: var(--muted);
+}
