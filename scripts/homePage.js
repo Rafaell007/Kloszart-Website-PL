@@ -1,1 +1,6 @@
-const textEl = document.querySelector('.text-animation');
+const animatedText = document.querySelector('.text-animation');
+
+
+function textAnimation () {
+    
+}
