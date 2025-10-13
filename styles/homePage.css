@@ -66,7 +66,7 @@
              border:4px solid rgba(0, 0, 0, 0.9);
             max-width: 1400px;
            min-height: 80vh;
-            margin: 82px auto 100px;
+            margin: 82px auto 20px;
             padding: 0 20px;
         }
         .content-wrap{
@@ -164,7 +164,7 @@
        
        .statue-container img{
         display: block;
-        height: 1000px;
+          height: 1100px !important;
         object-fit: contain;
        }
 .mist{
@@ -250,21 +250,14 @@
 }
 
 .split p {
-    font-family: Mori, 'Inter', sans-serif;
+    
     font-size: clamp(18px, 2.2vw, 28px);  
     line-height: 1.8;
-    letter-spacing: 0.02em;
-    font-weight: 400;
-    background: linear-gradient(
-        135deg,
-        rgba(253, 253, 253, 0.95) 0%,
-        rgba(179, 161, 161, 0.75) 50%,
-        rgba(138, 99, 99, 0.85) 100%
-    );
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-    filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.15));
+    font-weight: 100;
+    
+ 
+  
+   
 }
 
 .text-animation{
@@ -273,7 +266,7 @@
  transition: opacity 1s ease-out, transform 1s ease-out;
 }
 
-.text-animation.visible{
+.visible{
     opacity: 1;
     transform: translateY(0);
 }

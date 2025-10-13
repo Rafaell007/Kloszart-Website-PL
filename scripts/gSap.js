@@ -93,7 +93,7 @@ const stackTl = gsap.timeline({
         // 'top-=200 top' = zaczyna 200px PRZED dotknięciem góry (wcześniej, powyżej)
         // 'top+=100 top' = zaczyna 100px PO dotknięciu góry (później)
         // ZWIĘKSZ ujemną wartość = jeszcze wcześniej/wyżej (np. 'top-=300', 'top-=400')
-        start: 'top-=100px top',
+        start: 'top top',
         
         // end: długość scrollu dla całej animacji
         // Wartość (stackItems.length * 400 + 400) = dla 4 obrazów: 2000px scrollu
