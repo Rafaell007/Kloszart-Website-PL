@@ -53,7 +53,7 @@ function createCanvases(captureEl) {
 				scrollTrigger: {
 					scrub: 2.5,
 					start: () => 0,
-					end: () => window.innerHeight * 0.7
+					end: () => window.innerHeight * 0.5
 				}
 			});
 

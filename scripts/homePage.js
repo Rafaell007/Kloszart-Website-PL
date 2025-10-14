@@ -1,16 +1,18 @@
-const animatedText = document.querySelector('.text-animation');
-
+const animatedText = document.querySelectorAll('.text-animation');
 
 function textAnimation () {
-    const elementPosition = animatedText.getBoundingClientRect();
-    const windowHeight = window.innerHeight;
+    animatedText.forEach((element)=>{
+
+        const elementPosition = element.getBoundingClientRect();
+        const windowHeight = window.innerHeight;
 
     if(elementPosition.top < windowHeight * 0.6){
-    animatedText.classList.add('visible');
+    element.classList.add('visible');
     }
     if (elementPosition.top > windowHeight * 0.6){
-        animatedText.classList.remove('visible');
+        element.classList.remove('visible');
     }
+    });
 }
 
 window.addEventListener("scroll", textAnimation);

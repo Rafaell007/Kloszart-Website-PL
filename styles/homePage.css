@@ -302,29 +302,69 @@
     box-shadow: 0 20px 40px rgba(0,0,0,0.2);
 }
 
-
-/* ===== NASTĘPNA SEKCJA (PO STOSIE) ===== */
-/* Następna sekcja - normalny przepływ, podciągnięta bliżej */
-.next-section {
+.event-wraper {
+   padding-bottom: 50px;
+}
+.event-section {
     position: relative;
-    background: var(--bg);
-    padding: 50px 0;
+    overflow: hidden;
+   margin: 0 auto;
+    border: 1px solid white;
+    border-radius: 5%;
+    width: 95%;
+    height: 80vh;
+    position: relative;
+    margin-top: -80vh;
+    align-items: center;
     
-    /* margin-top: -70vh → podciąga sekcję bliżej stosu, kompensując pin-spacer */
-    /* ZWIĘKSZ ujemną wartość = bliżej stosu (np. -80vh, -90vh) */
-    /* ZMNIEJSZ ujemną wartość = dalej od stosu (np. -60vh, -50vh) */
-    /* USUŃ całkowicie = standardowy odstęp */
-    margin-top: -70vh;
-    text-align: center;
+}
+.event-section p {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%)  scaleY(3.0); 
+    font-size: 50px;
+    text-transform: uppercase;
+    color: #000;
+    font-family:"Limelight", sans-serif; 
+ 
+     font-weight: 900;
+     letter-spacing: 0.5em;
+   
 }
 
-.next-section h2 {
+.background-video{
+    position: absolute;
+   
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.event-section h2 {
     font-size: 48px;
     margin-bottom: 20px;
     color: var(--text);
 }
 
-.next-section p {
-    font-size: 18px;
-    color: var(--muted);
+.open-calendar-btn {
+   position: absolute;
+   top: 70%;
+   left: 50%;
+   transform: translate(-70%, -50%);
+   background: transparent;
+   border: 3px solid #000;
+   border-radius: 28px;
+   padding: 13px 28px;
+   cursor: pointer;
+   z-index: 1;
+   color: #000;
+font-size: 15px;
+font-weight: 900;
+   text-transform: uppercase;
+
 }
+
+
+
