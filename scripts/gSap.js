@@ -8,7 +8,7 @@ gsap.registerPlugin(ScrollTrigger);
 const COUNT = 75;
 const REPEAT_COUNT = 3;
 
-const capture = document.querySelector("#capture");
+const capture = document.querySelector(".capture");
 
 function createCanvases(captureEl) {
 	html2canvas(captureEl, {

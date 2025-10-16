@@ -13,7 +13,7 @@
     <!-- Biblioteki  -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
     <script src="https://unpkg.com/imagesloaded@5/imagesloaded.pkgd.min.js"></script>
-    <script src="https://cdn.tailwindcss.com"></script>
+   
     
    
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -25,12 +25,12 @@
 </head>
 <body>
 <header class="main">
-    <div class="statue-container " id="capture">
+    <div class="statue-container capture">
          <img src="/imges/ChatGPT Image 29 wrz 2025, 23_04_11.png" alt="Statue of Young Boy, he is holding a skull">
     </div>
     <img class="mist" src="imges/giphy_transparent.gif" alt="">
     <div class="home-wrap">
-        <div class="panel">
+        <div class="panel" >
             <nav class="nav">
                 <div class="nav-child">
                 <div class="brand">
@@ -67,22 +67,32 @@
     </section>
     </main>
 
-<div class="event-wraper">
+<div class="event-wraper ">
     <section class="event-section">
         <div>
+            <div class="modal-main" id="calendare-modal">
+                <p class="modal-exit">X</p>
+                <div class="modal-content">
+                </div>
+            </div>
+
+
+
             <p class="event-text text-animation">spektakle</p>
             <video autoplay muted loop playsinline class="background-video" src="imges/video/Zagubieni  Zwiastun.mp4" >
             </video>
+            <button class="open-calendar-btn type1 ">zobacz</button>
+
+            
         </div>
-        <button class="open-calendar-btn type1">KALENDARZ</button>
     </section>
 </div>
 
   
-   
+   <div class="block"></div>
     
 
     <script src="./scripts/gSap.js"></script>
-    <script src="scripts/homePage.js"></script>
+    <script type="module" src="scripts/homePage.js"></script>
 </body>
 </html>
