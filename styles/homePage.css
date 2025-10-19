@@ -156,7 +156,7 @@
 .capture-canvas {
 	position: fixed;
 	left: 50%;
-	top: 50%;
+	top: 46%;
 	transform: translate(-50%, -50%);
     
 }
@@ -168,12 +168,13 @@
          transform: translateX(-50%);
          bottom: 0;
          box-shadow: #e54;
+         z-index: 1;
         
         }
        
        .statue-container img{
         display: block;
-          height: 1100px !important;
+          height: 1030px !important;
         object-fit: contain;
        }
 .mist{

@@ -105,7 +105,7 @@ const stackTl = gsap.timeline({
         scrub: true, // animacja związana z scrollem (smooth follow)
         pin: stackSection, // przypina całą sekcję podczas animacji
         anticipatePin: 1, // zapobiega mrugnięciu przy pinowaniu
-        markers: true //  (pokazuje start/end triggera)
+        markers: false //  (pokazuje start/end triggera)
     }
 });
 

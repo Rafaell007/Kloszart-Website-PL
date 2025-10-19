@@ -1,3 +1,7 @@
+import { modal } from './modal.js';
+
+
+
 const animatedText = document.querySelectorAll('.text-animation');
 
 function textAnimation () {
@@ -17,3 +21,4 @@ function textAnimation () {
 
 window.addEventListener("scroll", textAnimation);
 
+modal();
