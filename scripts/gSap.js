@@ -51,9 +51,13 @@ function createCanvases(captureEl) {
 
 			let tl = gsap.timeline({
 				scrollTrigger: {
-					scrub: 2.5,
+					scrub: 4,
+					refreshPriority: -1,
 					start: () => 0,
-					end: () => window.innerHeight * 0.5
+					end: () => window.innerHeight * 0.5,
+					invalidateOnRefresh: true
+					
+
 				}
 			});
 
@@ -73,6 +77,19 @@ const images = gsap.utils.toArray("img");
 
 imagesLoaded(images).on("always", () => {
 	createCanvases(capture);
+	
+	// Animacja oryginalnej statuy
+	gsap.to(".statue-container", {
+		scrollTrigger: {
+			trigger: "body",
+			start: "top top",
+			end: "bottom bottom",
+			scrub: 1,
+			anticipatePin: 1
+		},
+		y: -window.innerHeight * 2, // przesuwa statuę w górę
+		opacity: 0
+	});
 });
 
 
