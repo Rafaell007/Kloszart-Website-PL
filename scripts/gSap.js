@@ -155,18 +155,15 @@ stackItems.forEach((item, i) => {
 });
 
 // ===== KOŃCOWY WYJAZD STOSU I TEKSTU =====
-// Na końcu: przesuwamy jednocześnie tekst i stos w górę poza ekran
-// "+=0.3" → pauza przed wyjazdm (ZWIĘKSZ = dłuższa pauza, np. 0.5, 1.0)
-stackTl.to([splitEl, stackStage], { 
-    // y: -window.innerHeight → przesuwa w górę o wysokość ekranu (= znika z widoku)
-    // ZMIEŃ na -window.innerHeight * 0.5 → mniejszy wyjazd
-    // ZMIEŃ na -window.innerHeight * 1.2 → większy wyjazd
-    y: -window.innerHeight,
-    
-    // ease: 'power1.inOut' → płynne przyspieszenie i zwolnienie
-    // Spróbuj: 'power2.inOut', 'expo.inOut', 'none' (liniowy)
+// Na końcu: zmniejszamy wysokość stosu do 0 i chowamy tekst
+stackTl.to(stackStage, { 
+    height: 0,
     ease: 'power1.inOut', 
-    
-    // duration: 1 → jak długo trwa wyjazd (ZWIĘKSZ = wolniej, np. 1.5, 2)
     duration: 4 
 }, "+=0.3");
+
+stackTl.to(splitEl, { 
+    opacity: 0,
+    ease: 'power1.inOut', 
+    duration: 4 
+}, "<");
