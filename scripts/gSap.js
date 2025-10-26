@@ -167,3 +167,29 @@ stackTl.to(splitEl, {
     ease: 'power1.inOut', 
     duration: 4 
 }, "<");
+
+
+
+//grow-shrink-section
+
+document.querySelectorAll('.grow-section').forEach((section)=>{
+	gsap.fromTo(section,
+		{
+			scale: 0.8,
+			
+			clipPath: 'inset(5% 5% 5% 5%)',	
+		},
+		{
+			scale: 1,
+			clipPath: "inset(0% 0% 0% 0%)",
+			ease:"power2.out",
+			duration: 1,
+			scrollTrigger: {
+				trigger:section,
+				start: "top 60%",
+				end: "top 40%",
+				scrub:2,
+			}
+		}
+	);
+});
