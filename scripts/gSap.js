@@ -13,7 +13,23 @@ const capture = document.querySelector(".capture");
 function createCanvases(captureEl) {
 	html2canvas(captureEl, {
 		backgroundColor: null,  // zachowuje przezroczystość
-		preserveDrawingBuffer: true
+		preserveDrawingBuffer: true,
+		useCORS: true,
+		allowTaint: true,
+		onclone: (clonedDoc) => {
+			
+			const root = clonedDoc.documentElement;
+			if (root && root.style) {
+				root.style.setProperty('--bg-dark', '#111217');
+				root.style.setProperty('--bg', '#1a1c21');
+				root.style.setProperty('--bg-light', '#23262d');
+				root.style.setProperty('--text', '#f0f1f5');
+				root.style.setProperty('--text-muted', '#b9bcc6');
+				root.style.setProperty('--highlight', '#6f7280');
+				root.style.setProperty('--border', '#555a66');
+				root.style.setProperty('--border-muted', '#454954');
+			}
+		}
 	}).then((canvas) => {
 		const width = canvas.width;
 		const height = canvas.height;
@@ -51,23 +67,27 @@ function createCanvases(captureEl) {
 
 			let tl = gsap.timeline({
 				scrollTrigger: {
+					trigger: "body",
+					start: "top top",
+					end: "+=400",
 					scrub: 4,
 					refreshPriority: -1,
-					start: () => 0,
-					end: () => window.innerHeight * 0.5,
-					invalidateOnRefresh: true
+					invalidateOnRefresh: true,
 					
-
-				}
+				},
+				
 			});
 
+			gsap.set(clonedCanvas, { xPercent: -50 });
+
 			tl.to(clonedCanvas, {
-				duration: 1,
+				duration: 2,
+				ease: "power3.out",
 				rotate: randomRotationAngle,
-				translateX: 40 * Math.sin(randomAngle),
-				translateY: 40 * Math.cos(randomAngle),
+				x: 40 * Math.sin(randomAngle),
+				y: 40 * Math.cos(randomAngle),
 				opacity: 0,
-				delay: (i / dataList.length) * 1
+				delay: (i / dataList.length) * 0.2
 			});
 		});
 	});
@@ -90,6 +110,7 @@ imagesLoaded(images).on("always", () => {
 		y: -window.innerHeight * 2, // przesuwa statuę w górę
 		opacity: 0
 	});
+	
 });
 
 
