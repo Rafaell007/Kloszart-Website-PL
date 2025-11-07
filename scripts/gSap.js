@@ -37,6 +37,7 @@ function createCanvases(captureEl) {
 		const imageData = ctx.getImageData(0, 0, width, height);
 		let dataList = [];
 		captureEl.style.display = "none";
+		
 
 		for (let i = 0; i < COUNT; i++) {
 			dataList.push(ctx.createImageData(width, height));

@@ -22,6 +22,11 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Limelight&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles/homePage.css">
+    <link rel="stylesheet" href="styles/slider.css">
+    <link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css"
+/>
 </head>
 <body>
 <header class="main">
@@ -40,7 +45,7 @@
             </nav>
         </div>
         <div class="capiton-container">
-             <h1 class="capiton">KLOSZ<span class="capiton-positioner">ART</span></h1>
+             <h1 class="capiton">KLOSZART</span></h1>
         </div> 
     </div>
     
@@ -63,74 +68,62 @@
     </section>
     </main>
 
-<div class="gallery-container">
-    
-        <div class="card">
-         <img src="./imges/ekipaKLOSZ.png" alt="">
-            <div class="card-content">
-                <h3>Ekipa</h3>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus provident fugit, debitis quae animi consectetur </p>
-                <button class="card-btn"> Zobacz więcej</button>
-           </div>
-        </div>
-         <div class="card">
-         <img src="./imges/ekipaKLOSZ.png" alt="">
-            <div class="card-content">
-                <h3>Ekipa</h3>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus provident fugit, debitis quae animi consectetur </p>
-                <button class="card-btn"> Zobacz więcej</button>
-           </div>
-        </div>
-         <div class="card">
-         <img src="./imges/ekipaKLOSZ.png" alt="">
-            <div class="card-content">
-                <h3>Ekipa</h3>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus provident fugit, debitis quae animi consectetur </p>
-                <button class="card-btn"> Zobacz więcej</button>
-           </div>
-        </div>
-         <div class="card">
-         <img src="./imges/ekipaKLOSZ.png" alt="">
-            <div class="card-content">
-                <h3>Ekipa</h3>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus provident fugit, debitis quae animi consectetur </p>
-                <button class="card-btn"> Zobacz więcej</button>
-           </div>
-        </div>
-    
 
-   
-            <div class="gallery-item">
-                <img class="gallery-photo" src="./imges/kloszSZTUKA.png" alt="">
-            </div>
-            <div class="gallery-item">
-                <div class="gallery-item-text-holder">
-                    <p class="gallery-header">Sztuka</p>
-                    <img class="gallery-spacer" src="./imges/smillingMask (1).png" alt="">
-                    <p class="gallery-paragraph" >Sztuka ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua, lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                </div>
-            </div>
-            <div class="gallery-item">
-                <div class="gallery-item-text-holder">
-                    <p class="gallery-header">Improwizacje</p>
-                    <img class="gallery-spacer" src="./imges/smillingMask (1).png" alt="">
-                    <p class="gallery-paragraph">2uorem ipsum dolor fsitttttt amdet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua, lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                </div>
-            </div>
-          <div class="gallery-item">
-                <img class="gallery-photo" src="./imges/improKLOSZ.png" alt="">
-            </div>
-              <div class="gallery-item">
-                <img class="gallery-photo" src="./imges/ekipaKLOSZ.png" alt="">
-            </div>
-            <div class="gallery-item">
-                <div class="gallery-item-text-holder">
-                    <p class="gallery-header">Integracja</p>
-                    <img class="gallery-spacer" src="./imges/smillingMask (1).png" alt="">
-                    <p class="gallery-paragraph" >3 auuu okrem dipsum doldor sddit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua, lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                </div>
-            </div>       
-</div>
+    <div class="swiper my-cards-swiper">
+        <!-- Additional required wrapper -->
+        <div class="swiper-wrapper">
+          <!-- Slides -->
+          <div class="swiper-slide">
+            <div class="card">
+                <img src="./imges/ekipaKLOSZ.png" alt="">
+                   <div class="card-content">
+                       <h3>Ekipa</h3>
+                       <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus provident fugit, debitis quae animi consectetur </p>
+                       <button class="card-btn"> Zobacz więcej</button>
+                  </div>
+               </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="card">
+                <img src="./imges/ekipaKLOSZ.png" alt="">
+                   <div class="card-content">
+                       <h3>Ekipa</h3>
+                       <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus provident fugit, debitis quae animi consectetur </p>
+                       <button class="card-btn"> Zobacz więcej</button>
+                  </div>
+               </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="card">
+                <img src="./imges/ekipaKLOSZ.png" alt="">
+                   <div class="card-content">
+                       <h3>Ekipa</h3>
+                       <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus provident fugit, debitis quae animi consectetur </p>
+                       <button class="card-btn"> Zobacz więcej</button>
+                  </div>
+               </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="card">
+                <img src="./imges/ekipaKLOSZ.png" alt="">
+                   <div class="card-content">
+                       <h3>Ekipa</h3>
+                       <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus provident fugit, debitis quae animi consectetur </p>
+                       <button class="card-btn"> Zobacz więcej</button>
+                  </div>
+               </div>
+          </div>
+         
+        </div>
+ 
+        <div class="swiper-pagination"></div>
+        <div class="swiper-button-prev swiper-btn"></div>
+        <div class="swiper-button-next swiper-btn"></div>
+    </div>
+      
+
+
+
 
 <div class="event-wraper">
     <div class="event-section">
@@ -160,5 +153,8 @@
    
     <script type="module" src="scripts/homePage.js"></script>
     <script src="./scripts/gSap.js"></script>
+    <script src="./scripts/gSap.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
+    <script src="./scripts/slider.js"></script>
 </body>
 </html>

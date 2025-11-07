@@ -149,6 +149,7 @@
 	left: 50%;
 	top: 46%;
 	transform: translate(-50%, -50%);
+	pointer-events: none;
     
 }
  
@@ -159,7 +160,7 @@
          left: 50%;
          transform: translateX(-50%);
          bottom: 0;
-         z-index: 1;
+         z-index: -1;
         }
        
        
@@ -219,7 +220,7 @@
             position: absolute;
             top: 60%;
             left: 5%;
-            font-size: 5cqw;
+            font-size: 6cqw;
             font-family: "sk-modernist", sans-serif;
             font-weight: 900; 
             line-height: 1.2;  
@@ -329,7 +330,7 @@ z-index: 1;
     display: flex;
     flex-direction: column;
     width: 100%;
-    max-width: min(90vw, 400px);
+    max-width: min(90vw, 350px);
     overflow: hidden;
     background: var(--bg-light);
     border-radius: 8px;
@@ -378,7 +379,7 @@ z-index: 1;
 }
 
 .gallery-container{
-    z-index: 3;
+    z-index: 4;
    
     margin: 0 auto;
     display: grid;

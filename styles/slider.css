@@ -1,0 +1,11 @@
+
+.my-cards-swiper{
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.my-cards-swiper .swiper-slide {
+    width: 400px;  /* lub inna stała szerokość */
+   
+}
+
