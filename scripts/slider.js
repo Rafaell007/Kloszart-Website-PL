@@ -1,20 +1,19 @@
 const cardsSwiper = new Swiper ('.my-cards-swiper', {
     slidesPerView: 3,
-    spaceBetween: 20,
-    observer: true,
+    spaceBetween: 16,
+    
+   loop: true,
    
-   watchOverflow: true,
-   watchSlidesProgress: true,
-    centeredSlides: true,
-
-    loopAdditionalSlides: 3,
-    initialSlide: 1,
-    roundLengths: true,
+   
     speed: 600,
     grabCursor: true,
     pagination: {
-        el:'.my-cards-swiper .swiper-pagination',
+        el:'.swiper-pagination ',
         clickable: true,
+        modifierClass: 'swiper-pagination',
+        bulletClass: 'pagination-bullet',
+        bulletActiveClass: 'bullet-active',
+       
     },
     autoplay: {
         delay: 3000,
@@ -22,18 +21,17 @@ const cardsSwiper = new Swiper ('.my-cards-swiper', {
         pauseOnMouseEnter: true,
     },
     navigation: {
-        nextEl: ".swiper-button-next",
-        prevEl: ".swiper-button-prev",
+        nextEl: ".swiper-right-btn",
+        prevEl: ".swiper-left-btn",
         
     },
     keyboard: {
         enabled: true,
     },
-   breakpoints: {
-    480: { slidesPerView: 1.2, spaceBetween: 10, centeredSlides: true },
-    768: { slidesPerView: 2, spaceBetween: 14, centeredSlides: true },
-    1024: { slidesPerView: 3, spaceBetween: 16, centeredSlides: false, loop: false},
-},
+  
 
 
 })
+
+
+

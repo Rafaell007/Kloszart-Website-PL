@@ -330,7 +330,7 @@ z-index: 1;
     display: flex;
     flex-direction: column;
     width: 100%;
-    max-width: min(90vw, 350px);
+    max-width: 400px;
     overflow: hidden;
     background: var(--bg-light);
     border-radius: 8px;
@@ -338,7 +338,7 @@ z-index: 1;
 .card img {
     height: 100%;
     border-radius: 0px;
-    max-width: 600px;
+    max-width: 400px;
     object-fit: cover;
     
 }
@@ -359,16 +359,16 @@ z-index: 1;
      cursor: pointer;
           font-family: "sk-modernist", sans-serif;
             font-size: 14px;
-            padding: 14px 24px;
-            border-radius: 8px;
-            background: var(--bg-dark);
+            padding: 7px 2px;
+            background: var(--bg-light);
             color: var(--text);
-            box-shadow: 0 0 16px var(--colora);
-            border: 2px solid var(--colora);
+            box-shadow: 0 4px  px var(--colora);
+            border:none;
+            border-bottom: 2px solid var(--colora);
             transition: all 0.3s ease;
 }
 .card-btn:hover{
- box-shadow: 0 0 24px var(--colora);
+ padding: 10px 17px;
  transition: all 0.3s ease;
 }
 
