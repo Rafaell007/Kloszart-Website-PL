@@ -1,5 +1,5 @@
 const cardsSwiper = new Swiper ('.my-cards-swiper', {
-    slidesPerView: 3,
+    slidesPerView: 1,
     spaceBetween: 16,
     
    loop: true,
@@ -29,6 +29,17 @@ const cardsSwiper = new Swiper ('.my-cards-swiper', {
         enabled: true,
     },
   
+    breakpoints: {
+        480: {
+            slidesPerView: 1,
+        },
+        768: {
+            slidesPerView: 2,
+        },
+        1200: {
+            slidesPerView: 3,
+        },
+    },
 
 
 })

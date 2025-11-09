@@ -83,7 +83,7 @@
             background-size: cover;
             border-radius: 10px;      
             padding: 0 20px;
-            border-top: 1px solid var(--highlight);
+            border: 4px solid black;
             min-height: 85vh;
             max-width: 1920px;
             width: 95%;
@@ -220,11 +220,11 @@
             position: absolute;
             top: 60%;
             left: 5%;
-            font-size: 6cqw;
+            font-size: 7cqw;
             font-family: "sk-modernist", sans-serif;
             font-weight: 900; 
             line-height: 1.2;  
-            letter-spacing: 0.3em;  
+            letter-spacing: 0.2em;  
         }
 
 .contact-btn {
@@ -327,6 +327,7 @@ z-index: 1;
 }
 
 .card{
+    position: relative;
     display: flex;
     flex-direction: column;
     width: 100%;
@@ -334,12 +335,34 @@ z-index: 1;
     overflow: hidden;
     background: var(--bg-light);
     border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.card::before{
+opacity: 0;
+content: "";
+position: absolute;
+left: 0;
+right: 0;
+top: 0;
+bottom: 0;
+ background: linear-gradient(135deg, var(--bg-light) 0%, rgba(255, 255, 255, 0.1) 100%);
+ border-radius: 8px;
+ transition: opacity 0.3s ease;
+
+}
+
+.card:hover::before{  
+   opacity: 1;
+   
 }
 .card img {
     height: 100%;
     border-radius: 0px;
     max-width: 400px;
     object-fit: cover;
+    position: relative;
+    z-index: 1;
     
 }
 .card h3 {
@@ -351,24 +374,38 @@ z-index: 1;
     line-height: 1.8em;
 }
 .card-content{
-    padding:20px
+    position: relative;
+    z-index: 1;
+    padding:20px;
 
 }
 .card-btn{
+    position: relative;
     margin-top: 15px;
      cursor: pointer;
           font-family: "sk-modernist", sans-serif;
             font-size: 14px;
             padding: 7px 2px;
-            background: var(--bg-light);
+            background: transparent;
             color: var(--text);
             box-shadow: 0 4px  px var(--colora);
             border:none;
-            border-bottom: 2px solid var(--colora);
             transition: all 0.3s ease;
 }
-.card-btn:hover{
- padding: 10px 17px;
+.card-btn::after{
+    position: absolute;
+    content: "";
+    width: 40px;
+    height: 1px;
+    background: var(--colora);
+    bottom: 0;
+    left: 0;
+    transition: all 0.3s ease;
+    box-shadow: 0 1px 6px var(--colora);
+}
+.card-btn:hover::after{
+ width: 100%;
+
  transition: all 0.3s ease;
 }
 
