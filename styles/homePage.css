@@ -52,7 +52,7 @@
         }
         html, body {
          
-            
+            scroll-behavior: smooth;
             background: var(--bg-dark); 
             background-attachment: fixed;
             background-size: cover;
@@ -75,6 +75,8 @@
     margin: 0 auto;
     overflow: hidden;
     max-width: 1920px;
+    height: 100vh;
+    
 }
         .home-wrap {
             box-sizing:border-box;
@@ -144,31 +146,46 @@
        
 
        
-.capture-canvas {
-	position: fixed;
-	left: 50%;
-	top: 46%;
-	transform: translate(-50%, -50%);
-	pointer-events: none;
-    
-}
- 
+
 
 .statue-container {
-    
-         position: fixed;
+       position: absolute;
+       height: 110vh;
+         
          left: 50%;
+         bottom: -20px;
          transform: translateX(-50%);
-         bottom: 0;
-         z-index: -1;
+         z-index: 2;
+         overflow: hidden;
+         
+        }
+        .statue-container::after{
+            content: "";
+            position: absolute;
+            left: 0; right: 0; bottom: 0;
+            background: var(--bg-dark);
+            height: 10vh;
+            width: 100%;
+            background: linear-gradient(to bottom, rgba(10,10,10,0), var(--bg-dark) 100%);
+          
         }
        
        
        .statue-container img{
-        display: block;
-          height: 109vh;
+    width: auto;
+          height: 100%;
         object-fit: contain;
+      
+          mask-image: linear-gradient(
+            to bottom,
+            rgba(0,0,0,1)   0% 60%,
+            rgba(0,0,0,0.7) 75%,
+            rgba(0,0,0,0.4) 87%,
+            rgba(0,0,0,0)  100%
+          );
        }
+     
+     
        
        @media (max-width:1366px){
 
@@ -259,6 +276,19 @@
 
 }
 
+.decline-section {
+    will-change: transform;
+    backface-visibility: hidden;
+    transform: translateZ(0);
+  }
+
+.stack-main{
+    position: relative;
+    margin: 0 auto;
+    overflow: hidden;
+    max-width: 1920px;
+    
+}
 /* ===== TEKST NAD STOSEM ===== */
  .split {
     text-align: center;

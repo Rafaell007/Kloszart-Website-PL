@@ -3,117 +3,9 @@ console.clear();
 
 
 
+//scroll trigger
+
 gsap.registerPlugin(ScrollTrigger);
-
-const COUNT = 75;
-const REPEAT_COUNT = 3;
-
-const capture = document.querySelector(".capture");
-
-function createCanvases(captureEl) {
-	html2canvas(captureEl, {
-		backgroundColor: null,  // zachowuje przezroczystość
-		preserveDrawingBuffer: true,
-		useCORS: true,
-		allowTaint: true,
-		onclone: (clonedDoc) => {
-			
-			const root = clonedDoc.documentElement;
-			if (root && root.style) {
-				root.style.setProperty('--bg-dark', '#111217');
-				root.style.setProperty('--bg', '#1a1c21');
-				root.style.setProperty('--bg-light', '#23262d');
-				root.style.setProperty('--text', '#f0f1f5');
-				root.style.setProperty('--text-muted', '#b9bcc6');
-				root.style.setProperty('--highlight', '#6f7280');
-				root.style.setProperty('--border', '#555a66');
-				root.style.setProperty('--border-muted', '#454954');
-			}
-		}
-	}).then((canvas) => {
-		const width = canvas.width;
-		const height = canvas.height;
-		const ctx = canvas.getContext("2d");
-		const imageData = ctx.getImageData(0, 0, width, height);
-		let dataList = [];
-		captureEl.style.display = "none";
-		
-
-		for (let i = 0; i < COUNT; i++) {
-			dataList.push(ctx.createImageData(width, height));
-		}
-
-		for (let x = 0; x < width; x++) {
-			for (let y = 0; y < height; y++) {
-				for (let l = 0; l < REPEAT_COUNT; l++) {
-					const index = (x + y * width) * 4;
-					const dataIndex = Math.floor(
-						(COUNT * (Math.random() + (2 * x) / width)) / 3
-					);
-					for (let p = 0; p < 4; p++) {
-						dataList[dataIndex].data[index + p] = imageData.data[index + p];
-					}
-				}
-			}
-		}
-
-		dataList.forEach((data, i) => {
-			let clonedCanvas = canvas.cloneNode();
-			clonedCanvas.getContext("2d").putImageData(data, 0, 0);
-			clonedCanvas.className = "capture-canvas";
-			document.body.appendChild(clonedCanvas);
-
-			const randomAngle = (Math.random() - 0.5) * 2 * Math.PI;
-			const randomRotationAngle = 30 * (Math.random() - 0.5);
-
-			let tl = gsap.timeline({
-				scrollTrigger: {
-					trigger: "body",
-					start: "top top",
-					end: "+=400",
-					scrub: 4,
-					refreshPriority: -1,
-					invalidateOnRefresh: true,
-					
-				},
-				
-			});
-
-			gsap.set(clonedCanvas, { xPercent: -50 });
-
-			tl.to(clonedCanvas, {
-				duration: 2,
-				ease: "power3.out",
-				rotate: randomRotationAngle,
-				x: 40 * Math.sin(randomAngle),
-				y: 40 * Math.cos(randomAngle),
-				opacity: 0,
-				delay: (i / dataList.length) * 0.2
-			});
-		});
-	});
-}
-
-const images = gsap.utils.toArray("img");
-
-imagesLoaded(images).on("always", () => {
-	createCanvases(capture);
-	
-	// Animacja oryginalnej statuy
-	gsap.to(".statue-container", {
-		scrollTrigger: {
-			trigger: "body",
-			start: "top top",
-			end: "bottom bottom",
-			scrub: 1,
-			anticipatePin: 1
-		},
-		y: -window.innerHeight * 2, // przesuwa statuę w górę
-		opacity: 0
-	});
-	
-});
-
 
 
 const stackSection = document.querySelector('.stack-section');
@@ -213,5 +105,30 @@ document.querySelectorAll('.grow-section').forEach((section)=>{
 				scrub:2,
 			}
 		}
+	);
+});
+
+//decline-shrink-section
+
+document.querySelectorAll('.decline-section').forEach((section)=>{
+	gsap.fromTo(section,
+		{
+		scale: 1,
+		clipPath: 'inset(0% 0% 0% 0%)',
+		},
+		{
+			scale:0.85,
+			opacity:0,
+			clipPath: 'inset(0% 0% 40% 0%)',	
+			ease:"none",
+			duration: 0.5,
+			scrollTrigger: {
+				trigger:section,
+				start:"top",
+				end: "bottom 20%",
+				scrub: 1,
+			}
+		}
+
 	);
 });
