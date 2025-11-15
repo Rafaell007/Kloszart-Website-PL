@@ -149,3 +149,26 @@ gsap.to(horizontalScroller, {
         document.querySelector('.horizontal-section').offsetWidth
     }
 });
+
+
+
+;(function(){
+    let chck_if_gsap_loaded = setInterval(function(){
+        if(window.gsap && window.ScrollTrigger){
+            gsap.registerPlugin(ScrollTrigger);
+						slide_background();
+            clearInterval(chck_if_gsap_loaded);
+        }
+    }, 500);
+		function slide_background(){
+			gsap.to(".slide-container",{
+    	scrollTrigger: {
+      trigger: ".slide-container",
+      start: "top top",
+      scrub:2
+    	},
+        background: 'linear-gradient(135deg, var(--bg-dark) 0%, #0a0a0e 15%, #1a1625 30%, #2d1b4e 50%, #1a1625 70%, #0f0f14 85%, var(--bg-dark) 100%)',
+    		duration: 1
+			});
+    }
+})();
