@@ -51,7 +51,7 @@
   --transition: 0.3s ease-in-out;
         }
         html, body {
-         
+            overflow-x: hidden;
             scroll-behavior: smooth;
             background: var(--bg-dark); 
             background-attachment: fixed;
@@ -157,7 +157,7 @@
          transform: translateX(-50%);
          z-index: 2;
          overflow: hidden;
-         
+         pointer-events: none;
         }
         .statue-container::after{
             content: "";
@@ -235,7 +235,7 @@
             text-transform: uppercase;
             z-index: 2;
             position: absolute;
-            top: 60%;
+            top: 55%;
             left: 5%;
             font-size: 7cqw;
             font-family: "sk-modernist", sans-serif;
@@ -247,8 +247,8 @@
 .contact-btn {
     cursor: pointer;
             position: absolute;
-            top: 75%;
-            right: 20%;    
+            top: 80%;
+            right: 25%;    
           font-family: "sk-modernist", sans-serif;
             font-size: 16px;
            
@@ -561,15 +561,39 @@ border-radius: 10px;
     }
 }
 
+
+
+.event-wraper{
+    display:flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+}
+
+.event-wraper > .event-section,
+.event-wraper > .contact-container{
+    flex: 0 0 100vw;
+    height: 100vh;
+    width: 100vw;
+}
 .calendar-container{
     height: 100vh;
+    width: 100vw;
     align-items: center;
-    position: relative;
-    overflow: hidden;
-   margin: 0 auto;
-    width: 100%;
-    max-width: 1920px;
    
+    max-width: 1920px; 
+}
+.contact-container {
+    
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap:10%;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--bg-light);
+    
 }
 .background-video{
     position: absolute;
@@ -627,6 +651,79 @@ overflow: hidden;
 .open-calendar-btn:hover{
     color: black;
 }
+
+
+.informations-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+
+   
+    
+    
+}
+.information-item{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0px 10px;
+   
+}
+#item-separator{
+    border-left: 1px solid var(--text-muted);
+    border-right: 1px solid var(--text-muted);
+}
+.information-item h3{
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--text-muted);
+}
+.information-item p{
+    font-size: 16px;
+    color: var(--text);
+}
+.map-container {
+    background: var(--colorp);
+    height: 70vh;
+    width: 70%;
+ border-radius: 8px;
+ transition: 0.3s ease-in-out;
+}
+.map-container > iframe{
+    border-radius: 8px;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.map-container:hover{
+    scale: 1.01;
+    transition: 0.3s ease-in-out;
+}
+.map{
+   
+    width: 100%;
+    height: 100%;
+  
+}
+
+@media(max-width: 800px) {
+    .contact-container{
+         flex-direction: column;
+         padding: 5px;
+    }
+
+    .informations-container {
+        max-width: 70%;
+     font-size: 14px;
+     padding: 3%;
+     align-items: center;
+    }
+
+}
+
+
+
 
 
 
@@ -704,6 +801,7 @@ overflow: hidden;
     width: 100%;
     height: 100%;
 }
+
 
 
 

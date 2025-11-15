@@ -114,12 +114,12 @@ document.querySelectorAll('.decline-section').forEach((section)=>{
 	gsap.fromTo(section,
 		{
 		scale: 1,
-		clipPath: 'inset(0% 0% 0% 0%)',
+	
 		},
 		{
-			scale:0.85,
+			scale:0.9,
 			opacity:0,
-			clipPath: 'inset(0% 0% 40% 0%)',	
+				
 			ease:"none",
 			duration: 0.5,
 			scrollTrigger: {
@@ -131,4 +131,21 @@ document.querySelectorAll('.decline-section').forEach((section)=>{
 		}
 
 	);
+});
+
+
+//horizontal-scroll
+
+let horizontalScroller = gsap.utils.toArray('.horizontal-section');
+gsap.to(horizontalScroller, {
+    xPercent: -100 * (horizontalScroller.length - 1),
+    ease: "none",
+    scrollTrigger: {
+        trigger: '#horizontal-scroll', //szyna scrolla
+        pin: true,
+        scrub: 1,
+        snap: 1/(horizontalScroller.length - 3),
+        end:()=> '+=' +
+        document.querySelector('.horizontal-section').offsetWidth
+    }
 });

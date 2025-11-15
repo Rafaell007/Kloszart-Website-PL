@@ -9,8 +9,6 @@
  <!-- GSAP  -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
-
-    <!-- Biblioteki  -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
     <script src="https://unpkg.com/imagesloaded@5/imagesloaded.pkgd.min.js"></script>
    
@@ -132,21 +130,42 @@
 
 
 
-<div class="event-wraper">
-    <div class="event-section">
-        <div class="calendar-container ">
-            <p class="event-text text-animation">spektakle</p>
-            <video class="background-video grow-section" autoplay muted loop playsinline src="imges/video/Zagubieni  Zwiastun.mp4" >
-            </video>
-            <button class="open-calendar-btn type1"  id="show-modal">kalendarz</button>
+<div class="event-wraper" id="horizontal-scroll" >
+        <div class="event-section horizontal-section">
+            <div class="calendar-container ">
+                <p class="event-text text-animation">spektakle</p>
+                <video class="background-video grow-section" autoplay muted loop playsinline src="imges/video/Zagubieni  Zwiastun.mp4" >
+                </video>
+                <button class="open-calendar-btn type1"  id="show-modal">kalendarz</button>
+            </div>
         </div>
-    </div>
-<footer >
-<div class="contact-container">
-    
+
+        <div class="contact-container horizontal-section">
+                <div class="informations-container">
+                    <div class="information-item">
+                        <h3 >Adres:</h3>
+                        <p>Kurta Obitza 10-001</p> <p>Olsztyn</p>
+                    </div>
+                    <div class="information-item" id="item-separator">
+                        <h3 >Kontakt:</h3>
+                        <p>757-759-857</p>
+                        <p>loremipsum@gmail.com</p>
+                    </div>
+                    <div class="information-item">
+                        <h3 >Otwarte:</h3>
+                        <p>Pon-Pt</p>
+                        <p>8:00 - 16:00</p>
+                    </div>
+                </div> 
+                <div class="map-container">
+                    <iframe class="map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2359.359226526069!2d20.456990889885805!3d53.74748632596416!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46e27f4beed6fd65%3A0xa8eb43e7c48baf1b!2sKurta%20Obitza%2C%2010-001%20Olsztyn!5e0!3m2!1spl!2spl!4v1763136375348!5m2!1spl!2spl" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+        </div>
 </div>
-</footer>
-</div>
+
+
+
+
 <div class="modal-background" id="calendare-btn">
     <div class="modal-content">
          <p class="modal-exit">X</p>
