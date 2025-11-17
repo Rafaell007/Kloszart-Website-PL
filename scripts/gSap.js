@@ -36,7 +36,7 @@ const stackTl = gsap.timeline({
         scrub: true, // animacja związana z scrollem (smooth follow)
         pin: stackSection, // przypina całą sekcję podczas animacji
         anticipatePin: 1, // zapobiega mrugnięciu przy pinowaniu
-        markers: false //  (pokazuje start/end triggera)
+       
     }
 });
 
@@ -89,20 +89,23 @@ stackTl.to(splitEl, {
 document.querySelectorAll('.grow-section').forEach((section)=>{
 	gsap.fromTo(section,
 		{
-			scale: 0.8,
+            
 			
-			clipPath: 'inset(5% 5% 5% 5%)',	
+			opacity: 0,
+			clipPath: 'inset(90% 0% 0% 0%)',	
 		},
 		{
-			scale: 1,
+            opacity: 1,
+			
 			clipPath: "inset(0% 0% 0% 0%)",
 			ease:"power2.out",
-			duration: 1,
+			duration: 3,
 			scrollTrigger: {
 				trigger:section,
-				start: "top 60%",
+				start: "top 90%",
 				end: "top 40%",
 				scrub:2,
+              
 			}
 		}
 	);
@@ -134,6 +137,33 @@ document.querySelectorAll('.decline-section').forEach((section)=>{
 });
 
 
+document.querySelectorAll('.stack-decline-section').forEach((section)=>{
+	gsap.fromTo(section,
+		{
+		scale: 1,
+	opacity: 1
+		},
+		{
+			scale:0.9,
+			opacity:0,
+				
+			ease:"none",
+			duration: 0.5,
+			scrollTrigger: {
+				trigger:section,
+				start:"top top ",
+				end: "bottom top",
+				scrub: 1,
+             
+              
+                
+			}
+		}
+
+	);
+});
+
+
 //horizontal-scroll
 
 let horizontalScroller = gsap.utils.toArray('.horizontal-section');
@@ -143,7 +173,7 @@ gsap.to(horizontalScroller, {
     scrollTrigger: {
         trigger: '#horizontal-scroll', //szyna scrolla
         pin: true,
-        scrub: 1,
+        scrub: 0.5,
         snap: 1/(horizontalScroller.length - 3),
         end:()=> '+=' +
         document.querySelector('.horizontal-section').offsetWidth
@@ -151,7 +181,7 @@ gsap.to(horizontalScroller, {
 });
 
 
-
+//slide-background
 ;(function(){
     let chck_if_gsap_loaded = setInterval(function(){
         if(window.gsap && window.ScrollTrigger){
