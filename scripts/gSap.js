@@ -197,7 +197,7 @@ gsap.to(horizontalScroller, {
       start: "top top",
       scrub:2
     	},
-        background: 'linear-gradient(135deg, var(--bg-dark) 0%, #0a0a0e 15%, #1a1625 30%, #2d1b4e 50%, #1a1625 70%, #0f0f14 85%, var(--bg-dark) 100%)',
+        background: 'linear-gradient(90deg, var(--bg-dark) 0%, #0a0a0e 15%, #1a1625 30%,rgb(10, 9, 14) 50%, #1a1625 70%, #9595aaff 85%, var(--bg-dark) 100%)',
     		duration: 1
 			});
     }
