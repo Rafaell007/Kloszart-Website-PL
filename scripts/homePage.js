@@ -1,4 +1,4 @@
-import { modal } from './modal.js';
+import {  contactModal, calendareModal} from './modal.js';
 
 
 
@@ -41,4 +41,5 @@ navLinks.forEach((link)=>{
     });
 });
 
-modal();
+calendareModal();
+contactModal()

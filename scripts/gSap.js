@@ -173,7 +173,7 @@ gsap.to(horizontalScroller, {
     scrollTrigger: {
         trigger: '#horizontal-scroll', //szyna scrolla
         pin: true,
-        scrub: 0.5,
+        scrub: true,
         snap: 1/(horizontalScroller.length - 3),
         end:()=> '+=' +
         document.querySelector('.horizontal-section').offsetWidth
@@ -191,9 +191,9 @@ gsap.to(horizontalScroller, {
         }
     }, 500);
 		function slide_background(){
-			gsap.to(".slide-container",{
+			gsap.to("body",{
     	scrollTrigger: {
-      trigger: ".slide-container",
+      trigger: "body",
       start: "top top",
       scrub:2
     	},
