@@ -90,13 +90,13 @@ document.querySelectorAll('.grow-section').forEach((section)=>{
 	gsap.fromTo(section,
 		{
             
-			
+			scale: 0.9,
 			opacity: 0,
-			clipPath: 'inset(90% 0% 0% 0%)',	
+			clipPath: 'inset(100% 5% 5% 0%)',	
 		},
 		{
             opacity: 1,
-			
+            scale: 1,
 			clipPath: "inset(0% 0% 0% 0%)",
 			ease:"power2.out",
 			duration: 3,
