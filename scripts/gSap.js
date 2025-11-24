@@ -1,6 +1,26 @@
 
 console.clear();
 
+//Split Text Animation
+
+gsap.registerPlugin(SplitText);
+document.fonts.ready.then(()=>{
+    let split =  SplitText.create(".split-text", {type:"words"});
+
+gsap.from(split.words, {
+    duration: 1,
+    y:100,
+    autoAlpha: 0,
+    stagger: {
+        amount: 0.5,
+        from: "end"
+    }
+});
+
+
+})
+
+
 
 
 //scroll trigger
@@ -104,7 +124,7 @@ document.querySelectorAll('.grow-section').forEach((section)=>{
 				trigger:section,
 				start: "top 90%",
 				end: "top 40%",
-				scrub:2,
+				scrub:4,
               
 			}
 		}
