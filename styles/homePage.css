@@ -79,7 +79,7 @@
 }
         
 .main{
-    position: relative;
+   
     margin: 0 auto;
     overflow: hidden;
     max-width: 1920px;
@@ -103,19 +103,15 @@
         .panel {
             position: relative;
         }
-        .nav {
+        .media {
            display: flex;
-           justify-content: space-between;
+           justify-content: flex-end;
            align-items: center;
-           gap: 10px;
+           gap: 3%;
             padding: 18px 24px;
         }
-        .nav-child{
-            z-index: 3;
-            display: flex;
-            gap: 250px;
-            align-items: center;
-        }
+        
+       
         .brand {
             display: flex;
             align-items: center;
@@ -128,16 +124,26 @@
             border-radius: 6px;
             background: linear-gradient(135deg, var(--accent) 0%, var(--accent-2) 100%);
             box-shadow: 0 8px 18px rgba(255,106,61,.35);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            cursor: pointer;
+        }
+        .brand img:hover{
+            transform:  rotate(2deg);
+            background: linear-gradient(135deg, var(--accent) 50%, var(--accent-2) 100%);
+            box-shadow: 0 12px 40px rgba(255,106,61,.6), 
+                        0 0 20px rgba(255,106,61,.4),
+                        inset 0 0 15px rgba(255,255,255,.1);
+            filter: brightness(1.15);
         }
        
-        .nav a {
+        .media a {
             font-family: "Limelight", sans-serif;;
             color: var(--text-muted);
             text-decoration: none;
             font-weight: 600;
             transition: color .5s ease;
         }
-        .nav a:hover { color: var(--text); }
+        .media a:hover { color: var(--text); }
 
       
         .btn-primary {
@@ -295,6 +301,7 @@
     margin: 0 auto ;
     overflow: hidden;
     max-width: 1920px;
+    margin-bottom: -350px;
     
 }
 /* ===== TEKST NAD STOSEM ===== */
@@ -306,7 +313,7 @@
 }
 
 .split p {
-    font-size: clamp(16px, 2.2vw, 20px);  
+    font-size: clamp(14px, 2vw, 18px);  
     line-height: 1.8;
     font-weight: 100;
     color: var(--text-muted);
@@ -343,6 +350,7 @@ z-index: 1;
     z-index: 2;
     justify-content: center;
     top: 20px;
+    
 
 }
 

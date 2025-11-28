@@ -20,6 +20,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Limelight&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles/homePage.css">
+    <link rel="stylesheet" href="styles/galerry.css">
     <link rel="stylesheet" href="styles/slider.css">
     <link
   rel="stylesheet"
@@ -28,29 +29,35 @@
 <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/SplitText.min.js"></script>
 </head>
 <body>
-<header class="main decline-section">
+    <nav class="nav-wraper" >
+        <div class="nav-bar" id="main-nav-bar">
+            <div class="brand">
+              <a href="#home-nav">  <img id="logo" src="./imges/kloszart.png" alt="logo kloszartu"> </a>
+            </div>
+            <a href="#about-us">O nas</a>
+            <a href="#events">Wydarzenia</a>
+            <a href="#nav-gallery">galeria</a>
+            <a href="#info">Kontakt</a>
+        </div>
+    </nav>
+<header class="main decline-section" id="home-nav">  
     <div class="statue-container ">
          <img class="statue-img " src="/imges/ChatGPT Image 29 wrz 2025, 23_04_11.png" alt="Statue of Young Boy, he is holding a skull">
     </div>
     <div class="home-wrap">
-        <div class="panel" >
-            <nav class="nav">
-                <div class="brand">
-                   <img src="./imges/kloszart.png" alt="logo kloszartu">
-                </div>
-                    <a href="#about-us">O nas</a>
-                    <a href="#events">Repertuar</a>
-                    <a href="#info">Informacje</a>
+        <div class="panel" >  
+            <nav class="media">
+                    <a href="#about-us"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-instagram-icon lucide-instagram"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg></a>
+                    <a href="#events"><svg xmlns="http://www.w3.org/2000/svg" width="29" height="29" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-youtube-icon lucide-youtube"><path d="M2.5 17a24.12 24.12 0 0 1 0-10 2 2 0 0 1 1.4-1.4 49.56 49.56 0 0 1 16.2 0A2 2 0 0 1 21.5 7a24.12 24.12 0 0 1 0 10 2 2 0 0 1-1.4 1.4 49.55 49.55 0 0 1-16.2 0A2 2 0 0 1 2.5 17"/><path d="m10 15 5-3-5-3z"/></svg></a>
+                    <a href="#info"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-facebook-icon lucide-facebook"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
             </nav>
         </div>
         <div class="capiton-container">
              <h1 class="capiton" id="split-text">KLOSZART</span></h1>
         </div> 
     </div>
-   
       <h2 class="middle-capiton split-text"> Teatr <br>studencki</br></h2>
-      
-      <button class="contact-btn modal-btn-js">Kontakt</button>
+      <button class="contact-btn modal-btn-js">Napisz</button>
 </header>
 <main class="stack-main" id="about-us">
     <section class="stack-section ">
@@ -152,7 +159,7 @@
             </div>
         </div>
 
-        <div class="contact-container horizontal-section" >
+        <div class="contact-container horizontal-section"  id="info" >
                 <div class="informations-container" >
                     <div class="information-item" >
                         <h3 >Adres:</h3>
@@ -169,7 +176,7 @@
                         <p>8:00 - 16:00</p>
                     </div>
                 </div> 
-                <div class="map-container" id="info">
+                <div class="map-container">
                     <img src="imges/fishing-boy.png" alt="">
                     <iframe class="map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2359.359226526069!2d20.456990889885805!3d53.74748632596416!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46e27f4beed6fd65%3A0xa8eb43e7c48baf1b!2sKurta%20Obitza%2C%2010-001%20Olsztyn!5e0!3m2!1spl!2spl!4v1763136375348!5m2!1spl!2spl" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                 </div>

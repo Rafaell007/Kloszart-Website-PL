@@ -5,29 +5,50 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="./styles/galerry.css">
+    <link rel="stylesheet" href="./styles/homePage.css">
         <link href="https://fonts.googleapis.com/css2?family=Limelight&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="./styles/homePage.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+<script src="https://unpkg.com/imagesloaded@5/imagesloaded.pkgd.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/SplitText.min.js"></script>
+
 </head>
 <body>
-    <header>
+<header>
    <nav>
     <div class="nav-container">
         <div class="nav-bar">
              <div class="brand">
-                   <img id="logo" src="./imges/kloszart.png" alt="logo kloszartu">
+                  <a href="./kloszart.html#home-nav"> <img id="logo" src="./imges/kloszart.png" alt="logo kloszartu"> </a>
             </div>
-            <a href="./kloszart.html#nav-gallery">Galeria</a>
-            <a href="/">About</a>
-            <a href="/">Contact</a>
-            <a href="/">Powrót</a>
+            <a href="./kloszart.html#about-us">O nas</a>
+            <a href="./kloszart.html#events">Wydarzenia</a>
+            <a href="./kloszart.html#nav-gallery">galeria</a>
+            <a href="./kloszart.html#info">Kontakt</a>
         </div>
     </div>
    </nav>
-        <section class="gallery-wrapper">
-            <div class="gallery-grid">
 
+
+<section>
+    <div class="head-text-container ">
+          <div class="head-text">
+            <h1>Zobacz nas w obiektywie</h1>
+          </div>
+          <div class="middle-text">
+            <p>Współpracujemy z fotografami, którzy uwieczniają nasze spektakle, improwizacje i wszystkie te szalone momenty. Efekt? Profesjonalne zdjęcia, które jednocześnie pokazują, że po prostu dobrze się bawimy.</p>
+          </div>
+          <div class="head-text-btn">
+        <a href="#gallery" class="split-text">Zobacz galerię</a>
+        <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-move-down-icon lucide-move-down"><path d="M8 18L12 22L16 18"/><path d="M12 2V22"/></svg>
+          </div>
+    </div>
+        <div class="gallery-wrapper">
+            <div class="gallery-grid">
                 <div class="gallery-item">
-                <img src="imges/photoGallery/galleryPhoto-36.png" alt="">
+                    <img src="imges/photoGallery/galleryPhoto-36.png" alt="">
                 </div>
                 <div class="gallery-item">
                     <img src="imges/photoGallery/galleryPhoto-35.png" alt="">
@@ -39,28 +60,44 @@
                     <img src="imges/photoGallery/galleryPhoto-10.png" alt="">
                 </div>
                 <div class="gallery-item">
-                        <img src="imges/photoGallery/galleryPhoto-20.png" alt="">
+                    <img src="imges/photoGallery/galleryPhoto-20.png" alt="">
                 </div>
                 <div class="gallery-item">
                     <img src="imges/photoGallery/galleryPhoto-14.png" alt="">   
-                </div>
-                
-            </div> 
-            
-        </section>
-        <div class="spacer">
-       <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-camera-icon lucide-camera"><path d="M13.997 4a2 2 0 0 1 1.76 1.05l.486.9A2 2 0 0 0 18.003 7H20a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V9a2 2 0 0 1 2-2h1.997a2 2 0 0 0 1.759-1.048l.489-.904A2 2 0 0 1 10.004 4z"/><circle cx="12" cy="13" r="3"/></svg>
-         <p>klosz_art</p>
-    </div>
-    </header>
-    
- 
-    <main>
-        <section class="gallery-wrapper">
-           <div class="photo-gallery"></div>
-        </section>
-    </main>
-    
-    <script type="module" src="./scripts/photoGallery.js"></script>
+                </div> 
+            </div>
+        </div>       
+</section>
+
+<div class="spacer " id="gallery">
+ <div class="spacer-container" >
+   
+     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-camera-icon lucide-camera"><path d="M13.997 4a2 2 0 0 1 1.76 1.05l.486.9A2 2 0 0 0 18.003 7H20a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V9a2 2 0 0 1 2-2h1.997a2 2 0 0 0 1.759-1.048l.489-.904A2 2 0 0 1 10.004 4z"/><circle cx="12" cy="13" r="3"/></svg>
+    <button class="spacer-btn" id="photos">z kim współpracujemy</button>
+ </div>
+ <div class="spacer-container photographers-modal">
+    <p class="exit-btn">X</p>
+<a href="https://www.instagram.com/anetazbiciak/">@anetazbiciak</a>
+<a href="https://www.instagram.com/kaja_photo/">@kaja_photo</a>
+<a href="https://www.instagram.com/maciejpiorek_fotografia/">@maciejpiorek_fotografia </a>
+<a href="https://www.instagram.com/milosz_pawlak_fotografia/">@milosz_pawlak_fotografia</a>
+</div>
+</div>
+
+<main>
+    <!--  
+    <section class="gallery-wrapper">
+        <div class="photo-gallery"></div>
+    </section>
+    -->
+    <div class="wrapper">
+       
+      </div>
+
+</main>
+<script type="module" src="./scripts/photoGallery.js"></script>
+<script src="./scripts/galleryGsap.js"></script>
+<script src="./scripts/gSap.js"></script>
+   
 </body>
 </html>

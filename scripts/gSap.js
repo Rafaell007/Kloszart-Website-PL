@@ -56,7 +56,7 @@ const stackTl = gsap.timeline({
         scrub: true, // animacja związana z scrollem (smooth follow)
         pin: stackSection, // przypina całą sekcję podczas animacji
         anticipatePin: 1, // zapobiega mrugnięciu przy pinowaniu
-       
+       markers: false
     }
 });
 
@@ -99,6 +99,14 @@ stackTl.to(stackStage, {
 stackTl.to(splitEl, { 
     opacity: 0,
     ease: 'power1.inOut', 
+    duration: 4 
+}, "<");
+
+stackTl.to(stackItems, { 
+    scale: 0.8,
+    opacity: 0,
+    y: 30,
+    ease: 'power2.in', 
     duration: 4 
 }, "<");
 
