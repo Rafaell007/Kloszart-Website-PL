@@ -418,8 +418,18 @@ bottom: 0;
     position: relative;
     z-index: 1;
     padding:20px;
+    transition: all 0.3s ease;
+}
+.card-paragraph{
+    max-height: 50px;
+    overflow: hidden;
+    transition: max-height 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+.card-content:hover .card-paragraph{
+    max-height: 500px;
 }
 .card h3 {
+    transition: all 0.3s ease;
     font-size: 18px;
     margin-bottom: 10px;
     color: var(--text);
