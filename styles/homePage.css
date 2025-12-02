@@ -471,16 +471,31 @@ bottom: 0;
  transition: all 0.3s ease;
 }
 
+/*  mp4 scroll */
+.video-container{
+  
+    overflow: hidden;
+    height: 100vh;
+    width: 100%;
+
+   
+}
+#lottie-scroll-trigger{
+    position: fixed;
+    z-index: -1;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+.scroll-spacer{
+    z-index: 1;
+   
+}
 
 .event-section {
     margin-top: 0; 
     position: relative; 
 }
-
-
-
-
-
 
 .event-wraper{
     display:flex;

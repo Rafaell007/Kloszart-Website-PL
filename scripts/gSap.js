@@ -192,21 +192,65 @@ document.querySelectorAll('.stack-decline-section').forEach((section)=>{
 });
 
 
-//horizontal-scroll
 
-let horizontalScroller = gsap.utils.toArray('.horizontal-section');
-gsap.to(horizontalScroller, {
-    xPercent: -100 * (horizontalScroller.length - 1),
-    ease: "none",
-    scrollTrigger: {
-        trigger: '#horizontal-scroll', //szyna scrolla
-        pin: true,
-        scrub: true,
-        snap: 1/(horizontalScroller.length - 3),
-        end:()=> '+=' +
-        document.querySelector('.horizontal-section').offsetWidth
-    }
-});
+//lottie scroll trigger
+const lottieContainer = document.getElementById('lottie-scroll-trigger');
+
+if (lottieContainer) {
+    const animation = lottie.loadAnimation({
+        container: lottieContainer,
+        renderer: 'svg',  
+        loop: false,
+        autoplay: false,
+        path: './data/JSON/mp4-scroll-animation.json'
+    });
+
+    animation.addEventListener('DOMLoaded', () => {
+        console.log('Lottie loaded! Total frames:', animation.totalFrames);
+        
+        gsap.to({ frame: 0 }, {
+            frame: animation.totalFrames - 1,
+            snap: "frame", // snap do pełnych klatek
+            ease: "none",
+          
+           
+            scrollTrigger: {
+                trigger: '.video-container',
+                start: "top top",
+                end: "+=2000", // 2000px scrolla na całą animację
+                scrub: true,
+                pin: true,
+            },
+            onUpdate: function() {
+                animation.goToAndStop(this.targets()[0].frame, true);
+            }
+        });
+    });
+
+    animation.addEventListener('data_failed', () => {
+        console.error(' JSON data not found');
+    });
+}
+
+
+
+//horizontal-scroll
+const horizontalScrollEl = document.querySelector('#horizontal-scroll');
+if (horizontalScrollEl) {
+    let horizontalScroller = gsap.utils.toArray('.horizontal-section');
+    gsap.to(horizontalScroller, {
+        xPercent: -100 * (horizontalScroller.length - 1),
+        ease: "none",
+        scrollTrigger: {
+            trigger: '#horizontal-scroll', //szyna scrolla
+            pin: true,
+            scrub: true,
+            snap: 1/(horizontalScroller.length - 3),
+            end:()=> '+=' +
+            document.querySelector('.horizontal-section').offsetWidth
+        }
+    });
+}
 
 
 //slide-background
