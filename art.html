@@ -4,24 +4,78 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="styles/art.css">
+    <link rel="stylesheet" href="styles/galerry.css">
     <link rel="stylesheet" href="styles/homePage.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/Observer.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollToPlugin.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
     <script src="https://unpkg.com/imagesloaded@5/imagesloaded.pkgd.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/SplitText.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.12.2/lottie.min.js"></script>
   </head>
 <body>
-    
-<section>
-    <div class="video-container" >
-     <div id="lottie-scroll-trigger">
-      
-     </div>
-     <p>Hello World</p>
-    </div> 
-</section>
-<script src="./scripts/gSap.js"></script>
+  <nav class="nav-wraper" id="art-nav-bar" >
+    <div class="nav-bar" id="main-nav-bar">
+        <div class="brand">
+          <a href="./kloszart.html#home-nav">  <img id="logo" src="./imges/kloszart.png" alt="logo kloszartu"> </a>
+        </div>
+        <a href="./kloszart.html#about-us">O nas</a>
+        <a href="./kloszart.html#events">Wydarzenia</a>
+        <a href="./kloszart.html#nav-gallery">galeria</a>
+        <a href="./kloszart.html#info">Kontakt</a>
+    </div>
+</nav>
+
+
+<main>
+  <section>
+  <div class="video-container" >
+      <div id="lottie-scroll-trigger"> </div>
+      <div class="head-text-container">
+        <h1 class="head-text split-text"> 
+          Spektalke
+        </h1>
+        </div>
+          <div class="content-container-wrapper">
+            <div class="content-container-left">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus beatae fugiat quasi, 
+              dolorum molestias quo laboriosam quam, hic nobis pariatur illo inventore nostrum blanditiis 
+              repudiandae, ratione alias! Sunt, incidunt voluptate?</p>
+            </div>
+            <div class="content-container-right">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus beatae fugiat quasi, 
+              dolorum molestias quo laboriosam quam, hic nobis pariatur illo inventore nostrum blanditiis 
+              repudiandae, ratione alias! Sunt, incidunt voluptate?</p>
+            </div>
+          </div>
+         <div class="content-container-bottom split-text-bottom">
+          <p>uroczyście przysiegamy, ze knujemy coś artystycznego!</p>
+         </div>
+  </div>
+  </section>
+
+</main>
+<footer class="footer-wraper" style="clip-path: polygon(0% 0, 100% 0%, 100% 100%, 0 100%); height: 100vh;" id="footer">
+  <div class="footer-content">
+<div class="footer-container" style="height: 100vh;" >
+<div class="footer-content" id="lower-container">
+    <div id="lower-container-item">
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum vel asperiores officiis nesciunt id quaerat sapiente ipsa, dicta, quae, maxime minus eius fugit harum blanditiis ducimus corrupti expedita eveniet cum!
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Optio excepturi quo eos ducimus distinctio perspiciatis ullam sunt cupiditate, est animi veritatis ex illo eligendi molestiae molestias consequuntur sint dolorum at!</p>
+    </div>
+    <div class="lower-container-item">
+              <iframe src="https://www.facebook.com/plugins/video.php?height=476&href=https%3A%2F%2Fwww.facebook.com%2Fkloszart.teatr%2Fvideos%2F1340484840622425%2F%3Fidorvanity%3D24870504159248020&show_text=false&width=357&t=0" width="357" height="476" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" allowFullScreen="true"></iframe>
+
+    </div>
+  </div>
+</div>
+</footer>
+
+<script type="module" src="./scripts/gSap.js"></script>
+<script type="module" src="./scripts/art.js"></script>
+<script src="./scripts/galleryGsap.js"></script>
 </body>
 </html>

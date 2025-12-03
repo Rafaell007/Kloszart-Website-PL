@@ -213,3 +213,39 @@ export let gallery = [
        
     
 ]
+
+
+
+
+export let comments = [
+    {
+        src:"./imges/comments/comment-1.png"
+    },
+    {
+        src:"./imges/comments/comment-2.png"
+    },
+    {
+        src:"./imges/comments/comment-3.png"
+    },
+    {
+        src:"./imges/comments/comment-4.png"
+    },
+    {
+        src:"./imges/comments/comment-5.png"
+    },
+    {
+        src:"./imges/comments/comment-6.png"
+    },
+    {
+        src:"./imges/comments/comment-7.png"
+    },
+    {
+        src:"./imges/comments/comment-8.png"
+    },
+    {
+        src:"./imges/comments/comment-9.png"
+    },
+    {
+        src:"./imges/comments/comment-10.png"
+    },
+]

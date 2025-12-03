@@ -1,3 +1,5 @@
+import { showContent, showContentBottom } from "./art.js";
+
 
 console.clear();
 
@@ -9,6 +11,7 @@ document.fonts.ready.then(()=>{
 
 gsap.from(split.words, {
     duration: 1,
+    filter: "blur(10px)",
     y:100,
     autoAlpha: 0,
     stagger: {
@@ -17,6 +20,19 @@ gsap.from(split.words, {
     }
 });
 
+})
+
+
+
+document.fonts.ready.then(()=>{
+    let split =  SplitText.create(".split-text-bottom", {type:"words"});
+
+gsap.from(split.words, {
+    scale: 0,
+    opacity: 0,
+    filter: "blur(10px)",
+    stagger: 0.1
+});
 
 })
 
@@ -210,14 +226,14 @@ if (lottieContainer) {
         
         gsap.to({ frame: 0 }, {
             frame: animation.totalFrames - 1,
-            snap: "frame", // snap do pełnych klatek
-            ease: "none",
+           
+            ease: "power1.inOut",
           
            
             scrollTrigger: {
                 trigger: '.video-container',
                 start: "top top",
-                end: "+=2000", // 2000px scrolla na całą animację
+                end: "+=1200", // 2000px scrolla na całą animację
                 scrub: true,
                 pin: true,
             },
@@ -274,3 +290,27 @@ if (horizontalScrollEl) {
 			});
     }
 })();
+
+
+//observer - fullpage scroll (tylko na stronie art.html)
+const contentWrapper = document.querySelector('.content-container-wrapper');
+
+if (contentWrapper) {
+    gsap.registerPlugin(Observer, ScrollToPlugin);
+    
+    let scrollCount = 0;
+    
+    Observer.create({
+        target: window,
+        type: "wheel,touch",
+        tolerance: 500,
+       
+        onDown: () => {
+            scrollCount++;
+            showContent();
+            if (scrollCount > 0){
+                showContentBottom();
+            }
+        },
+    });
+}
