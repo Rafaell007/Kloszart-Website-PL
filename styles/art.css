@@ -89,11 +89,18 @@ body{
 }
 #lottie-scroll-trigger{
     position: fixed;
+    top: 0;
+    left: 0;
     z-index: -2;
-  height: 100%;
-  width: 100%;
-  object-fit: cover;
-  
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+}
+
+#lottie-scroll-trigger svg {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover;
 }
 .scroll-spacer{
   z-index: 1;
@@ -103,6 +110,7 @@ body{
 .content-container-wrapper{
   display: none;
 }
+
 
 .content-container-left{
    
@@ -154,6 +162,7 @@ body{
   color: var(--text-muted);
 }
 
+
 .show-content{
     display: block;
 }
@@ -173,11 +182,47 @@ body{
 #lower-container{
   height: 100vh;
   width: 100%;
-  background: var(--bg-dark);
+  background-image: url(/imges/pexels-francesco-ungaro-669319.jpg) ;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   display: flex;
   align-items: center;
   justify-content: center;
 }
-#lower-container-item{
-  width: 20%;
+.lower-container-item{
+  position: absolute;
+  bottom: 20%;
+backdrop-filter: blur(5px) saturate(140%);
+background: rgba(30, 30, 30, 0.7);
+border-radius: 10px;
+border: 1px solid var(--bg-light);
+padding: 40px;
+  width: 50%;
+  font-size: 18px;
+  font-weight: 400;
+}
+.lower-container-item p {
+  color: var(--text)
+}
+
+@media (max-width: 764px){
+  .content-container-left {
+    width: 40%;
+  }
+   .content-container-right {
+    width: 40%;
+  }
+  .content-container-bottom p{
+    font-size: 14px;
+    text-align: center;
+  }
+  .content-container-wrapper p {
+    font-size: 14px;
+  }
+  .lower-container-item{
+    width: 80%;
+    font-size: 14px;
+  }
+
 }

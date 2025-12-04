@@ -218,7 +218,10 @@ if (lottieContainer) {
         renderer: 'svg',  
         loop: false,
         autoplay: false,
-        path: './data/JSON/mp4-scroll-animation.json'
+        path: './data/JSON/mp4-scroll-animation.json',
+        rendererSettings: {
+            preserveAspectRatio: 'xMidYMid slice'
+        }
     });
 
     animation.addEventListener('DOMLoaded', () => {
@@ -303,7 +306,7 @@ if (contentWrapper) {
     Observer.create({
         target: window,
         type: "wheel,touch",
-        tolerance: 500,
+        tolerance: 100,
        
         onDown: () => {
             scrollCount++;
