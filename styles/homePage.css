@@ -98,6 +98,7 @@
             max-width: 1920px;
             width: 95%;
             margin: 50px auto 20px;
+            overflow: hidden;
         }
        
         .panel {
@@ -479,21 +480,43 @@ bottom: 0;
    
 }
 .comment-container{
-   
     z-index: -10;
     width: 100%;
-    height:60vh ;
+    height: auto;
     background: transparent;
     overflow: hidden;
 }
 .comment-wrapper{
-     display: flex;
-    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
     width: 100%;
-    height: 60vh;
-    flex-wrap: nowrap;
-    gap: 1%;
+    height: auto;
+    gap: 5px;
     overflow: hidden;
+}
+
+.comments-column {
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+    will-change: transform;
+    visibility: hidden;
+}
+
+.comments-column .item {
+    flex-shrink: 0;
+    width: 700px;
+    height: 120px;
+    display: flex;
+    align-items: center;
+}
+
+.comments-column .item img {
+    width: 100%;
+    height: 100%;
+    object-fit:fill;
+    border-radius: 10px;
 }
 
 .event-section {

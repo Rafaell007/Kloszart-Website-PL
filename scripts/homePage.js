@@ -49,7 +49,7 @@ let commentsContainer = '';
 
 comments.forEach((column)=>{
     commentsContainer += `
-     <div class="column">
+     <div class="column" id="comments-column">
           <div class="item"><img src="${column[0].src}" /></div>
           <div class="item"><img src="${column[1].src}" /></div>
           <div class="item"><img src="${column[2].src}" /></div>

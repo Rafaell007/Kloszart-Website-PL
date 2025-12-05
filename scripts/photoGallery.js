@@ -1,4 +1,4 @@
-import { gallery} from "../data/gallery.js";
+import { gallery, comments } from "../data/gallery.js";
 
 
 
@@ -24,16 +24,20 @@ if(wrapper){
 
 
 const photoBtn = document.querySelector(".spacer-btn");
-const  photoModal = document.querySelector(".photographers-modal");
+const photoModal = document.querySelector(".photographers-modal");
 const exitBtn = document.querySelector(".exit-btn");
 
-photoBtn.addEventListener("click", ()=>{
-    photoModal.classList.add("show-modal");
-})
+if (photoBtn && photoModal) {
+    photoBtn.addEventListener("click", () => {
+        photoModal.classList.add("show-modal");
+    });
+}
 
-exitBtn.addEventListener("click", ()=>{
-    photoModal.classList.remove("show-modal");
-})
+if (exitBtn && photoModal) {
+    exitBtn.addEventListener("click", () => {
+        photoModal.classList.remove("show-modal");
+    });
+}
 
 // Smooth scroll dla linków z # na tej samej stronie
 const anchorLinks = document.querySelectorAll('a[href^="#"]');
@@ -57,8 +61,27 @@ anchorLinks.forEach((link) => {
 });
 
 
+/* COMMENTS */
 
+let commentsContainer = '';
 
+comments.forEach((column) => {
+    commentsContainer += `
+     <div class="comments-column">
+          <div class="item"><img src="${column[0].src}" /></div>
+          <div class="item"><img src="${column[1].src}" /></div>
+          <div class="item"><img src="${column[2].src}" /></div>
+          <div class="item"><img src="${column[3].src}" /></div>
+          <div class="item"><img src="${column[4].src}" /></div>
+          <div class="item"><img src="${column[5].src}" /></div>
+        </div>
+              `   
+});
+
+const commentWrapper = document.querySelector(".comment-wrapper");
+if (commentWrapper) {
+    commentWrapper.innerHTML = commentsContainer;
+}
 
 
 
