@@ -1,4 +1,4 @@
-import { gallery } from "../data/gallery.js";
+import { gallery} from "../data/gallery.js";
 
 
 
@@ -17,8 +17,10 @@ gallery.forEach((column)=>{
               `   
 })
 
-
-document.querySelector(".wrapper").innerHTML = photoContainer;
+const wrapper = document.querySelector(".wrapper");
+if(wrapper){
+ wrapper.innerHTML= photoContainer; 
+}
 
 
 const photoBtn = document.querySelector(".spacer-btn");
@@ -53,6 +55,7 @@ anchorLinks.forEach((link) => {
         }
     });
 });
+
 
 
 

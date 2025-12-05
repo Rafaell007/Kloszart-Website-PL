@@ -1,4 +1,5 @@
 import { calendareModal, contactModal} from './modal.js';
+import { comments} from '../data/gallery.js';
 
 
 
@@ -40,6 +41,30 @@ navLinks.forEach((link)=>{
 
     });
 });
+
+
+/* COMMENTS */
+
+let commentsContainer = '';
+
+comments.forEach((column)=>{
+    commentsContainer += `
+     <div class="column">
+          <div class="item"><img src="${column[0].src}" /></div>
+          <div class="item"><img src="${column[1].src}" /></div>
+          <div class="item"><img src="${column[2].src}" /></div>
+          <div class="item"><img src="${column[3].src}" /></div>
+          <div class="item"><img src="${column[4].src}" /></div>
+          <div class="item"><img src="${column[5].src}" /></div>
+        </div>
+              `   
+})
+
+const commentWrapper = document.querySelector(".comment-wrapper");
+if(commentWrapper){
+    commentWrapper.innerHTML = commentsContainer
+}
+
 
 
 contactModal();
