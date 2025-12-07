@@ -6,9 +6,9 @@
     max-width: 1400px;
     display: flex;
     align-items: center;
-    
 }
 .my-cards-swiper{
+ 
    max-width: 1300px;   
    margin-bottom: 15px;
 }
@@ -37,7 +37,6 @@
 }
  .my-cards-swiper{
     max-width: 350px;
-    
 }}
 
 .swiper-nav{
@@ -56,7 +55,6 @@
     pointer-events:auto;
     cursor: pointer;
     transition: all 0.3s ease;
-
 }
 
 .swiper-left-btn:hover,
@@ -67,7 +65,7 @@
 
 .swiper-pagination {
     position: absolute;
-    top: -15px;
+    bottom: 0;
     left: 0;
     right: 0;
     margin: 0 auto;
