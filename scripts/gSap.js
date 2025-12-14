@@ -358,7 +358,7 @@ let scrollCount = 0;
                         opacity: 0,
                         y: 30,
                         ease: "power2.in",
-                        duration: 1.5
+                        duration: 2.5
 
                      }); 
                        

@@ -48,11 +48,19 @@ export function navigationModal(){
     const modal = document.querySelector(".mobile-nav-bar-modal");
     const modalBtn = document.querySelector(".mobile-nav-icon");
     const modalExit = document.querySelector(".mobile-nav-exit");
+    const modalItems = document.querySelectorAll(".mobile-nav-items");
 
     modalBtn.addEventListener("click", ()=>{
-        modal.classList.add("show-modal");
+        modal.classList.add("show-mobile-nav-modal");
     })
     modalExit.addEventListener("click", ()=>{
-        modal.classList.remove("show-modal")
+        modal.classList.remove("show-mobile-nav-modal")
     })
+    modalItems.forEach((item)=>{
+        item.addEventListener("click", ()=>{
+            modal.classList.remove("show-mobile-nav-modal");
+        })
+    })
+
+
 }
