@@ -6,37 +6,80 @@
     <meta name="description" content="Teatr Studencki Kloszart — kreatywna scena, projekty i spektakle.">
     <title>Kloszart — Teatr Studencki</title>
     
- <!-- GSAP  -->
+    <!-- GSAP -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/Observer.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
-    <script src="https://unpkg.com/imagesloaded@5/imagesloaded.pkgd.min.js"></script>
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;600;700;800&family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/SplitText.min.js"></script>
+
+    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;600;700;800&family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Limelight&display=swap" rel="stylesheet">
+
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <!-- Swiper -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css">
+
+    <!-- Local styles -->
     <link rel="stylesheet" href="styles/homePage.css">
     <link rel="stylesheet" href="styles/galerry.css">
     <link rel="stylesheet" href="styles/slider.css">
-    <link
-  rel="stylesheet"
-  href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css"
-/>
-<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/SplitText.min.js"></script>
 </head>
 <body>
-    <nav class="nav-wraper" >
-        <div class="nav-bar" id="main-nav-bar">
-            <div class="brand">
-              <a href="#home-nav">  <img id="logo" src="./imges/kloszart.png" alt="logo kloszartu"> </a>
-            </div>
-            <a href="#about-us">O nas</a>
-            <a href="#events">Wydarzenia</a>
-            <a href="#nav-gallery">galeria</a>
-            <a href="#info">Kontakt</a>
+    
+    <nav class="nav-wrapper" >
+        <div class="mobile-nav-icon">
+          <i class="bi bi-list"></i>
         </div>
+            <div class="nav-bar" id="main-nav-bar">
+                <div class="brand">
+                <a href="#home-nav">  <img id="logo" src="./imges/kloszart.png" alt="logo kloszartu"> </a>
+                </div>
+                <a href="#about-us">O nas</a>
+                <a href="#events">Wydarzenia</a>
+                <div class="nav-drop-down">
+                <a class="drop-down-btn" href="#nav-gallery">Galeria</a>
+                    <div class="drop-down-container">
+                        <a href="">zdjęcia</a>
+                        <a href="">filmy</a>
+                        <a href="">improwizacje</a>
+                        <a href=""> sztuka</a>
+                    </div>
+                </div>
+                <a href="#info">Kontakt</a>
+            </div>
+        
+        <section >   
+            <div class="mobile-nav-bar-modal">
+                <div class="mobile-nav-exit">
+                    <i class="bi bi-x"></i>
+                </div>
+                <div class="mobile-nav-head">
+                     <div class="brand"><a href="#home-nav">  <img id="logo" src="./imges/kloszart.png" alt="logo kloszartu"> </a></div>
+                     <p>KLOSZART</p>
+                </div>
+                <div class="mobile-nav-items">
+                        <a href="">O nas</a>
+                        <a href="">Wydarzenia</a>
+                        <a href="">Galeria</a>
+                        <a href="">Kontakt</a>
+                </div>
+                         <hr class="mobile-hr-spacer">
+                <div class="mobile-nav-media">
+                   <a href="">Instagram</a>
+                   <a href="">Facebook</a>
+                   <a href="">Youtube</a>
+                </div>
+                <div class="mobile-message-btn">
+                <button class=" contact-btn modal-btn-js">Napisz</button>
+            </div>
+            </div>   
+        </section>
+
     </nav>
 <header class="main decline-section" id="home-nav">  
     <div class="statue-container ">
@@ -68,6 +111,12 @@
         <div class="stack-item"> <img src="imges/stack-img/484993605_2457927817871801_8515100237601601049_n.jpg" alt="" class="stack-img"></div>
         <div class="stack-item "> <img src="imges/stack-img/dupian.jpg" alt="" class="stack-img"></div>
     </div>
+    <p class="stack-container-text ">
+        <span class="showUp-text-1">Uroczyście</span>
+        <span class="showUp-text-2">przysięgamy,</span>
+        <span class="showUp-text-3">że knujemy</span>
+        <span class="showUp-text-4">coś artystycznego!</span>
+        </p>
     </section>
     </main>
 

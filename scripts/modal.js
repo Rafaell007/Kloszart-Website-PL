@@ -41,3 +41,18 @@ export function contactModal(){
    
     
 };
+
+
+
+export function navigationModal(){
+    const modal = document.querySelector(".mobile-nav-bar-modal");
+    const modalBtn = document.querySelector(".mobile-nav-icon");
+    const modalExit = document.querySelector(".mobile-nav-exit");
+
+    modalBtn.addEventListener("click", ()=>{
+        modal.classList.add("show-modal");
+    })
+    modalExit.addEventListener("click", ()=>{
+        modal.classList.remove("show-modal")
+    })
+}

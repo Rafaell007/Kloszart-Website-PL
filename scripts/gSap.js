@@ -317,3 +317,55 @@ if (contentWrapper) {
         },
     });
 }
+
+//showUp-text ovserver + scroll trigger
+
+const stackContainer = document.querySelector(".stack-container");
+ const textParagraph = document.querySelector(".stack-container-text");
+
+if (stackContainer) {
+let scrollCount = 0;
+
+    ScrollTrigger.create({
+        trigger: ".stack-container",
+        start: "top top",
+        onEnter: () => {
+            Observer.create({
+                target: window,
+                type: "wheel,touch",
+                tolerance: 150,
+                onDown: () => {
+                    if (scrollCount >= 6) return; // zatrzymaj jeśli już 6
+                    
+                    scrollCount++;
+                    console.log("scrollCount:", scrollCount); // debug
+                    
+                    if (scrollCount === 1) {
+                        document.querySelector(".showUp-text-1").classList.add("show");
+                    }
+                    if (scrollCount === 2) {
+                        document.querySelector(".showUp-text-2").classList.add("show");
+                    }
+                    if (scrollCount === 3) {
+                        document.querySelector(".showUp-text-3").classList.add("show");
+                    }
+                    if (scrollCount === 4) {
+                        document.querySelector(".showUp-text-4").classList.add("show");
+                    }
+                    if (scrollCount === 5) {
+                     gsap.to(textParagraph, {
+                        scale: 0.8,
+                        opacity: 0,
+                        y: 30,
+                        ease: "power2.in",
+                        duration: 1.5
+
+                     }); 
+                       
+                    }
+                }
+            });
+        }
+    });
+}
+

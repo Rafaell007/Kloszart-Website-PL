@@ -1,4 +1,4 @@
-import { calendareModal, contactModal} from './modal.js';
+import { calendareModal, contactModal, navigationModal} from './modal.js';
 import { comments} from '../data/gallery.js';
 
 
@@ -69,3 +69,4 @@ if(commentWrapper){
 
 contactModal();
 calendareModal();
+navigationModal();
