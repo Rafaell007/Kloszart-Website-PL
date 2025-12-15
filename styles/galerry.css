@@ -77,6 +77,11 @@ body {
     position: fixed;
     left: 50px;
     z-index: 2;
+    cursor: pointer;
+    background: transparent;
+    color: var(--text);
+    border: none;
+    padding: 20px;
 }
 .mobile-nav-icon i {
     font-size: 30px;
@@ -397,6 +402,11 @@ flex-direction: column;
     -webkit-animation-duration: 0.4s;
     animation-name: slideInRight;
     animation-duration: 0.4s;
+}
+
+/* gdy dodamy klasę "show-modal", modal ma się pokazać (nadpisuje display:none) */
+.photographers-modal.show-modal {
+    display: flex;
 }
 
 .photographers-modal a{
