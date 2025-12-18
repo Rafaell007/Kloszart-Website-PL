@@ -1,4 +1,4 @@
-import { calendareModal, contactModal, navigationModal} from './modal.js';
+import { calendarModal, contactModal, navigationModal} from './modal.js';
 import { comments} from '../data/gallery.js';
 
 
@@ -12,10 +12,10 @@ function textAnimation () {
         const windowHeight = window.innerHeight;
 
     if(elementPosition.top < windowHeight * 0.6){
-    element.classList.add('visible');
+    element.classList.add('is-visible');
     }
     if (elementPosition.top > windowHeight * 0.6){
-        element.classList.remove('visible');
+        element.classList.remove('is-visible');
     }
     });
 }
@@ -49,7 +49,7 @@ let commentsContainer = '';
 
 comments.forEach((column)=>{
     commentsContainer += `
-     <div class="column" id="comments-column">
+     <div class="comments-column">
           <div class="item"><img src="${column[0].src}" /></div>
           <div class="item"><img src="${column[1].src}" /></div>
           <div class="item"><img src="${column[2].src}" /></div>
@@ -61,6 +61,7 @@ comments.forEach((column)=>{
 })
 
 const commentWrapper = document.querySelector(".comment-wrapper");
+
 if(commentWrapper){
     commentWrapper.innerHTML = commentsContainer
 }
@@ -68,5 +69,5 @@ if(commentWrapper){
 
 
 contactModal();
-calendareModal();
+calendarModal();
 navigationModal();

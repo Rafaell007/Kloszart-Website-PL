@@ -318,7 +318,7 @@ if (contentWrapper) {
     });
 }
 
-//showUp-text ovserver + scroll trigger
+//show-up-text ovserver + scroll trigger
 
 const stackContainer = document.querySelector(".stack-container");
  const textParagraph = document.querySelector(".stack-container-text");
@@ -335,22 +335,22 @@ let scrollCount = 0;
                 type: "wheel,touch",
                 tolerance: 150,
                 onDown: () => {
-                    if (scrollCount >= 6) return; // zatrzymaj jeśli już 6
+                    if (scrollCount >= 6) return; 
                     
                     scrollCount++;
-                    console.log("scrollCount:", scrollCount); // debug
+                   
                     
                     if (scrollCount === 1) {
-                        document.querySelector(".showUp-text-1").classList.add("show");
+                        document.querySelector(".show-up-text-1").classList.add("show");
                     }
                     if (scrollCount === 2) {
-                        document.querySelector(".showUp-text-2").classList.add("show");
+                        document.querySelector(".show-up-text-2").classList.add("show");
                     }
                     if (scrollCount === 3) {
-                        document.querySelector(".showUp-text-3").classList.add("show");
+                        document.querySelector(".show-up-text-3").classList.add("show");
                     }
                     if (scrollCount === 4) {
-                        document.querySelector(".showUp-text-4").classList.add("show");
+                        document.querySelector(".show-up-text-4").classList.add("show");
                     }
                     if (scrollCount === 5) {
                      gsap.to(textParagraph, {

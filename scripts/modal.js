@@ -2,8 +2,8 @@
 
 
 
-export function calendareModal() {
-const modal = document.querySelector('.calendare');
+export function calendarModal() {
+const modal = document.querySelector('.calendar');
 const modalBtn = document.querySelector('.open-calendar-btn');
 const modalExit = document.querySelector('.modal-exit');
 

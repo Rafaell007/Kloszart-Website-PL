@@ -26,9 +26,8 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css">
     <script defer src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
 
-
     <!-- Local styles -->
-    <link rel="stylesheet" href="styles/homePage.css">
+    <link rel="stylesheet" href="styles/index.css">
     <link rel="stylesheet" href="styles/galerry.css">
     <link rel="stylesheet" href="styles/slider.css">
 </head>
@@ -49,10 +48,10 @@
             <div class="nav-drop-down">
             <a class="drop-down-btn" href="#nav-gallery">Galeria</a>
                 <div class="drop-down-container">
-                    <a href="photoGallery.html">zdjęcia</a>
+                    <a href="photo-gallery.html">zdjęcia</a>
                     <a href="https://www.youtube.com/@kloszart5603/videos">filmy</a>
                     <a href="impro.html">improwizacje</a>
-                    <a href="art.html"> sztuka</a>
+                    <a href="art.html">sztuka</a>
                 </div>
             </div>
             <a href="#info">Kontakt</a>
@@ -95,11 +94,11 @@
                         <a aria-label="Facebook" href="#"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-facebook-icon lucide-facebook"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
                 </nav>
             </div>
-            <div class="capiton-container">
-                <h1 class="capiton" aria-label="Nazwa Teatru Studenckiego Kloszart">KLOSZART</h1>
+            <div class="caption-container">
+                <h1 class="caption" aria-label="Nazwa Teatru Studenckiego Kloszart">KLOSZART</h1>
             </div> 
         </div>
-        <h2 class="middle-capiton split-text"> Teatr <br>studencki</h2>
+        <h2 class="middle-caption split-text"> Teatr <br>studencki</h2>
         <button class="contact-btn modal-btn-js">Napisz</button>
     </header>
     <main>
@@ -107,11 +106,11 @@
             <div class="stack-section ">
             <div class="split">
                 <p class="text-animation"> Najczęściej działamy teatralnie, więc „Teatr Kloszart” pasuje do nas idealnie. Nie zamykamy się jednak w jednej formie — improwizujemy, kręcimy krótkie filmy, tworzymy wizualnie i fotograficznie. Można powiedzieć, że nie ma dnia, byśmy nie knuli czegoś artystycznego.</p>
-            <p class="stack-container-text" id="showUp-text">
-                <span class="showUp-text-1">Uroczyście</span>
-                <span class="showUp-text-2">przysięgamy,</span>
-                <span class="showUp-text-3">że knujemy</span>
-                <span class="showUp-text-4">coś artystycznego!</span>
+            <p class="stack-container-text" id="show-up-text">
+                <span class="show-up-text-1">Uroczyście</span>
+                <span class="show-up-text-2">przysięgamy,</span>
+                <span class="show-up-text-3">że knujemy</span>
+                <span class="show-up-text-4">coś artystycznego!</span>
             </p>
             </div>
             <div class="stack-container ">
@@ -188,7 +187,7 @@
                             <div class="card-paragraph">
                             <p>Zatrzymane w kadrze momenty prób, spektakli i codziennego życia teatru. Każde zdjęcie opowiada fragment naszej historii — od pierwszych prób po wielkie premiery, od za kulisami po sceniczne emocje.</p>
                             </div>
-                            <a href="photoGallery.html" class="card-btn"> Zobacz więcej</a>
+                            <a href="photo-gallery.html" class="card-btn"> Zobacz więcej</a>
                         </div>
                     </div>
                 </div>
@@ -205,11 +204,15 @@
             </div>
             </div>
         </section>
+
         <section class="comment-section">
-        <div class="comment-container">
-            <div class="comment-wrapper"></div>
-        </div>
+            <div class="comment-container">
+                <div class="comment-wrapper">
+
+                </div>
+            </div>
         </section>
+
         <section>
             <div class="event-wrapper" id="horizontal-scroll" >
             <div class="event-section horizontal-section" id="events">
@@ -217,7 +220,7 @@
                     <h2 class="event-text text-animation">spektakle</h2>
                     <video class="background-video grow-section" autoplay muted loop playsinline src="imges/video/Zagubieni  Zwiastun.mp4" >
                     </video>
-                    <button class="open-calendar-btn type1">kalendarz</button>
+                    <button class="open-calendar-btn hover-fill-btn">kalendarz</button>
                 </div>
             </div>
             <div class="contact-container horizontal-section"  id="info" >
@@ -275,10 +278,7 @@
              <button type="button" class="contact-modal-exit modal-exit-js" aria-label="Zamknij">
                 X
             </button>
-
         <h2 id="contact-modal-title">Wiadomość</h2>
-
-       
             <div class="contact-element">
                 <p>Imię :</p>
                 <input name="name" type="text" >
@@ -298,10 +298,9 @@
             </div>
             <button class="contact-modal-btn" type="submit">Wyślij</button>
         </form>
-        </div>
     </div>
 
-<div class="modal-background calendare" >
+<div class="modal-background calendar" hidden>
     <div class="modal-content">
          <button class="modal-exit">X</button>
          <iframe class="modal-content-iframe" src="https://calendar.google.com/calendar/embed?src=rafalkazberuk7%40gmail.com&ctz=Europe%2FWarsaw" style="border: 0" width="800" height="600" frameborder="0" scrolling="no"></iframe>
@@ -312,10 +311,10 @@
 
     
    
-    <script type="module" src="scripts/homePage.js"></script>
+    <script type="module" src="scripts/index.js"></script>
     <script defer src="./scripts/slider.js"></script>
     <script type="module" src="./scripts/gSap.js"></script>
-    <script type="module" src="./scripts/photoGallery.js"></script>
-    <script defer src="./scripts/commentsGallery.js"></script>
+    <script type="module" src="./scripts/photo-gallery.js"></script>
+    <script defer src="./scripts/comments-gallery.js"></script>
 </body>
 </html>
