@@ -1,4 +1,4 @@
-export let gallery = [
+export let photos = [
 
 
 

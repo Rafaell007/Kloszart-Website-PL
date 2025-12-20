@@ -7,6 +7,8 @@ const modal = document.querySelector('.calendar');
 const modalBtn = document.querySelector('.open-calendar-btn');
 const modalExit = document.querySelector('.modal-exit');
 
+if (!modal || !modalBtn || !modalExit) return;
+
 modalBtn.addEventListener('click', ()=>{
     modal.classList.add("show-modal");
     console.log("test");
@@ -25,6 +27,8 @@ export function contactModal(){
     const modal = document.querySelector(".modal-js");
     const modalOpen = document.querySelector(".modal-btn-js");
     const modalExit = document.querySelector(".modal-exit-js")
+
+    if (!modal || !modalOpen || !modalExit) return;
 
     modalOpen.addEventListener("click", ()=>{
         modal.classList.remove("exit-slideLeft");
@@ -49,6 +53,8 @@ export function navigationModal(){
     const modalBtn = document.querySelector(".mobile-nav-icon");
     const modalExit = document.querySelector(".mobile-nav-exit");
     const modalItems = document.querySelectorAll(".mobile-nav-items");
+
+    if (!modal || !modalBtn || !modalExit) return;
 
     modalBtn.addEventListener("click", ()=>{
         modal.classList.add("show-mobile-nav-modal");

@@ -1,5 +1,7 @@
-console.clear();
 
+
+
+  export function initCommentsScroll(){
 
 window.addEventListener("load", () => {
   const columns = gsap.utils.toArray(".comments-column");
@@ -338,4 +340,5 @@ function horizontalLoop(items, config) {
     return () => window.removeEventListener("resize", onResize);
   });
   return timeline;
+}
 }

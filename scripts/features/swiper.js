@@ -1,3 +1,7 @@
+
+
+export function initSwiper() {
+    
 const cardsSwiper = new Swiper ('.my-cards-swiper', {
     slidesPerView: 1,
     spaceBetween: 16,
@@ -43,6 +47,6 @@ const cardsSwiper = new Swiper ('.my-cards-swiper', {
 
 
 })
-
+}
 
 

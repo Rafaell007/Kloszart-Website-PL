@@ -1,26 +1,14 @@
 import { calendarModal, contactModal, navigationModal} from './modal.js';
-import { comments} from '../data/gallery.js';
+import { initTextAnimation } from './features/text-animation.js';
+import { initStackSection } from './features/gsap/stack-section.js';
+import { initSwiper } from './features/swiper.js';
+import { initCommentsScroll } from './features/gsap/comments-scroll.js';
+import { initSplitText } from './features/gsap/split-text.js';
+import { initHomeShrinkSection } from './features/gsap/home-shrink-sections.js';
+import { initHorizontalSection } from './features/gsap/horizontal-section.js';
+import { initDataRender } from './features/data-render.js';
 
 
-
-const animatedText = document.querySelectorAll('.text-animation');
-
-function textAnimation () {
-    animatedText.forEach((element)=>{
-
-        const elementPosition = element.getBoundingClientRect();
-        const windowHeight = window.innerHeight;
-
-    if(elementPosition.top < windowHeight * 0.6){
-    element.classList.add('is-visible');
-    }
-    if (elementPosition.top > windowHeight * 0.6){
-        element.classList.remove('is-visible');
-    }
-    });
-}
-
-window.addEventListener("scroll", textAnimation);
 
 
 const navLinks = document.querySelectorAll('a[href^="#"]');
@@ -43,31 +31,17 @@ navLinks.forEach((link)=>{
 });
 
 
-/* COMMENTS */
 
-let commentsContainer = '';
-
-comments.forEach((column)=>{
-    commentsContainer += `
-     <div class="comments-column">
-          <div class="item"><img src="${column[0].src}" /></div>
-          <div class="item"><img src="${column[1].src}" /></div>
-          <div class="item"><img src="${column[2].src}" /></div>
-          <div class="item"><img src="${column[3].src}" /></div>
-          <div class="item"><img src="${column[4].src}" /></div>
-          <div class="item"><img src="${column[5].src}" /></div>
-        </div>
-              `   
-})
-
-const commentWrapper = document.querySelector(".comment-wrapper");
-
-if(commentWrapper){
-    commentWrapper.innerHTML = commentsContainer
-}
+    initDataRender();
+    initSplitText();
+    initHomeShrinkSection();
+    initTextAnimation();
+    initStackSection();
+    initSwiper();
+    initCommentsScroll();
+    initHorizontalSection();
+    contactModal();
+    calendarModal();
+    navigationModal();
 
 
-
-contactModal();
-calendarModal();
-navigationModal();
