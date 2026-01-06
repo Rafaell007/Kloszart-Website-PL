@@ -48,3 +48,29 @@ if(wrapper){
 }
 
 }
+
+/* VIDEO LOADER */
+
+export function initLazyVideo(){
+const video = document.querySelector("video.js-lazy-video");
+if(!video) return;
+
+const source = video.querySelector("source[data-src]");
+if (!source) return;
+
+gsap.registerPlugin(ScrollTrigger);
+
+ScrollTrigger.create({
+  trigger: video,
+  start: "top 90%",
+  once: true,
+  onEnter: ()=>{
+    console.log("video enter started");
+    
+    source.src = source.dataset.src;
+    source.removeAttribute("data-src");
+    video.load();
+    video.play().catch(err => console.log("video play blocked", err));
+  }
+});
+}

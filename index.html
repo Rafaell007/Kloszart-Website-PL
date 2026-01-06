@@ -5,6 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Teatr Studencki Kloszart — kreatywna scena, projekty i spektakle.">
     <title>Kloszart — Teatr Studencki</title>
+
+    <!--EmailJS --> 
+    <script type="text/javascript"
+    src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+    </script>
+    <script type="text/javascript">
+    (function(){
+    emailjs.init({
+    publicKey: "BcrjeEBS2Fh7PPwHB",
+    });
+    })();
+    </script>
     
     <!-- GSAP -->
     <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
@@ -84,7 +96,7 @@
     </nav>
     <header class="main decline-section" id="home-nav">  
         <div class="statue-container ">
-            <img class="statue-img " src="/imges/ChatGPT Image 29 wrz 2025, 23_04_11.png" alt="Statue of Young Boy, he is holding a skull">
+            <img class="statue-img " src="./imges/ChatGPT Image 29 wrz 2025, 23_04_11.png" alt="Statue of Young Boy, he is holding a skull">
         </div>
         <div class="home-wrap">
             <div class="panel" >  
@@ -98,7 +110,7 @@
                 <h1 class="caption" aria-label="Nazwa Teatru Studenckiego Kloszart">KLOSZART</h1>
             </div> 
         </div>
-        <h2 class="middle-caption split-text"> Teatr <br>studencki</h2>
+        <h2 class="middle-caption split-text"> Teatr <br>offowy</h2>
         <button class="contact-btn modal-btn-js">Napisz</button>
     </header>
     <main>
@@ -117,7 +129,7 @@
                 <div class="stack-item"> <img src="imges/stack-img/485971988_2457175157947067_9174137711431420094_n.jpg" alt="" class="stack-img"></div>
                 <div class="stack-item"> <img src="imges/stack-img/474758472_1007284468098727_3953538719578172248_n.jpg" alt="" class="stack-img"></div>
                 <div class="stack-item"> <img src="imges/stack-img/484993605_2457927817871801_8515100237601601049_n.jpg" alt="" class="stack-img"></div>
-                <div class="stack-item "> <img src="imges/stack-img/dupian.jpg" alt="" class="stack-img"></div>
+                <div class="stack-item "> <img src="imges/stack-img/stackIMG_4.jpg" alt="" class="stack-img"></div>
             </div>
             </div>
         </section>
@@ -148,7 +160,7 @@
                             <div class="card-paragraph">
                             <p>Impro, czyli improwizacja teatralna, to niezwykle dynamiczna i kreatywna forma sztuki scenicznej. Improwizacja polega na tworzeniu spektakli, historii, scen, piosenek i dialogów, jednym słowem wszystkiego co składa się na spektakl, na żywo, bez wcześniejszego przygotowania.  </p>
                             </div>
-                            <a href="#" class="card-btn"> Zobacz więcej</a>
+                            <a href="./impro.html" class="card-btn"> Zobacz więcej</a>
                         </div>
                     </div>
                 </div>
@@ -218,8 +230,15 @@
             <div class="event-section horizontal-section" id="events">
                 <div class="calendar-container ">
                     <h2 class="event-text text-animation">spektakle</h2>
-                    <video class="background-video grow-section" autoplay muted loop playsinline src="imges/video/Zagubieni  Zwiastun.mp4" >
+                    
+                    <video class="background-video grow-section js-lazy-video" 
+                    muted loop playsinline
+                    preload="none"
+                    poster="imges/video/poster.jpg"
+                    >
+                    <source data-src="imges/video/Zagubieni  Zwiastun.mp4" type="video/mp4">
                     </video>
+
                     <button class="open-calendar-btn hover-fill-btn">kalendarz</button>
                 </div>
             </div>
@@ -281,19 +300,19 @@
         <h2 id="contact-modal-title">Wiadomość</h2>
             <div class="contact-element">
                 <p>Imię :</p>
-                <input name="name" type="text" >
+                <input name="name" type="text" id="sender-name" required >
             </div>
             <div class="contact-element">
                 <p>Email :</p>
-                <input name="email" type="email" >
+                <input name="email" type="email" id="email" required >
             </div>
             <div class="contact-element">
                 <p>Numer :</p>
-                <input name="phone" type="tel" >
+                <input name="phone" type="tel" id="phone-number">
             </div>
             <div class="contact-element " id="contact-message">
                 <p>Wiadomość:</p>
-                <textarea name="message" type="text" autocomplete="off" ></textarea>
+                <textarea name="message" type="text" autocomplete="off" id="message" required ></textarea>
           
             </div>
             <button class="contact-modal-btn" type="submit">Wyślij</button>

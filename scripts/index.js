@@ -6,7 +6,9 @@ import { initCommentsScroll } from './features/gsap/comments-scroll.js';
 import { initSplitText } from './features/gsap/split-text.js';
 import { initHomeShrinkSection } from './features/gsap/home-shrink-sections.js';
 import { initHorizontalSection } from './features/gsap/horizontal-section.js';
-import { initDataRender } from './features/data-render.js';
+import { initDataRender, initLazyVideo } from './features/data-render.js';
+import { initEmailForm } from './email-form.js';
+
 
 
 
@@ -31,8 +33,9 @@ navLinks.forEach((link)=>{
 });
 
 
-
+    initEmailForm()
     initDataRender();
+    initLazyVideo();
     initSplitText();
     initHomeShrinkSection();
     initTextAnimation();

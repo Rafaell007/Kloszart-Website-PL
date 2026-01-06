@@ -263,10 +263,11 @@
         }
 
 .contact-btn {
+    z-index: 99;
     cursor: pointer;
             position: absolute;
             top: 80%;
-            right: 25%;    
+            right: 20%;    
           font-family: "sk-modernist", sans-serif;
             font-size: 16px;
            
