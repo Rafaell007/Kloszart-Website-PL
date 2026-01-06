@@ -1,4 +1,4 @@
-# Kloszart — strona Teatru Studenckiego Kloszart
+# Kloszart — strona Teatru Offowego Kloszart
 
 Propozycja statycznej strony WWW (HTML/CSS/JS), przygotowana na zamówienie dla Teatru Offowego **Kloszart** — landing page oraz podstrony z galerią, rekrutacją i informacjami o spektaklach.
 Nie jest to wersja ostateczna, lecz wstępny projekt oparty na „czystym” kodzie (HTML/CSS/JS) z użyciem bibliotek do animacji.
