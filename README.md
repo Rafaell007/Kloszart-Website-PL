@@ -1,6 +1,8 @@
-# Kloszart-1 — strona Teatru Studenckiego Kloszart
+# Kloszart — strona Teatru Studenckiego Kloszart
 
-Statyczna strona www (HTML/CSS/JS) dla Teatru Alternatywnego **Kloszart** — landing page + podstrony z galerią, rekrutacją i informacjami o spektaklach.
+Propozycja statycznej strony WWW (HTML/CSS/JS), przygotowana na zamówienie dla Teatru Offowego **Kloszart** — landing page oraz podstrony z galerią, rekrutacją i informacjami o spektaklach.
+Nie jest to wersja ostateczna, lecz wstępny projekt oparty na „czystym” kodzie (HTML/CSS/JS) z użyciem bibliotek do animacji.
+W przyszłości projekt ma zostać przeniesiony na platformę WordPress, gdzie uzyska ostateczną formę wraz z wdrożeniem.
 
 ## Demo
 
@@ -30,7 +32,7 @@ Formularz na stronie głównej korzysta z EmailJS:
 - inicjalizacja klucza publicznego jest w `index.html`
 - wysyłka (service/template) jest w `scripts/email-form.js`
 
-Jeśli publikujesz repo publicznie i chcesz mieć własną wysyłkę maili, podmień identyfikatory na swoje:
+Jeśli  chcesz mieć własną wysyłkę maili, podmień identyfikatory na swoje:
 - `publicKey` w `index.html`
 - `service_id` i `template_id` w `scripts/email-form.js`
 
