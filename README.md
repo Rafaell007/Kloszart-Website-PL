@@ -6,7 +6,7 @@ W przyszłości projekt ma zostać przeniesiony na platformę WordPress, gdzie u
 
 ## Demo
 
-- **Demo**:
+- **Demo**: https://rafaell007.github.io/Kloszart-Website-PL/photo-gallery.html
 
 ## Podstrony
 
