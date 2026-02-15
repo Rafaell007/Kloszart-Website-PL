@@ -1,573 +1,338 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="pl">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta
-      name="description"
-      content="Teatr Studencki Kloszart — kreatywna scena, projekty i spektakle."
-    />
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Teatr Studencki Kloszart — kreatywna scena, projekty i spektakle.">
     <title>Kloszart — Teatr Studencki</title>
 
-    <!--EmailJS -->
-    <script
-      type="text/javascript"
-      src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"
-    ></script>
-    <script type="text/javascript">
-      (function () {
-        emailjs.init({
-          publicKey: "BcrjeEBS2Fh7PPwHB",
-        });
-      })();
+    <!--EmailJS --> 
+    <script type="text/javascript"
+    src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
     </script>
-
+    <script type="text/javascript">
+    (function(){
+    emailjs.init({
+    publicKey: "BcrjeEBS2Fh7PPwHB",
+    });
+    })();
+    </script>
+    
     <!-- GSAP -->
-    <script
-      defer
-      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"
-    ></script>
-    <script
-      defer
-      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"
-    ></script>
-    <script
-      defer
-      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/Observer.min.js"
-    ></script>
-    <script
-      defer
-      src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/SplitText.min.js"
-    ></script>
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/Observer.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/SplitText.min.js"></script>
 
     <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;600;700;800&family=Inter:wght@300;400;600;700&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Limelight&display=swap"
-      rel="stylesheet"
-    />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;600;700;800&family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Limelight&display=swap" rel="stylesheet">
 
     <!-- Icons -->
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
-    />
-    <link
-      rel="icon"
-      type="image/png"
-      href="./imges/icons/favicon32px.png"
-      sizes="32x32"
-    />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="icon" type="image/png" href="./imges/icons/favicon32px.png" sizes = "32x32">
 
     <!-- Swiper -->
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css"
-    />
-    <script
-      defer
-      src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"
-    ></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
 
     <!-- Local styles -->
-    <link rel="stylesheet" href="styles/index.css" />
-    <link rel="stylesheet" href="styles/galerry.css" />
-    <link rel="stylesheet" href="styles/slider.css" />
-  </head>
-  <body>
+    <link rel="stylesheet" href="styles/index.css">
+    <link rel="stylesheet" href="styles/galerry.css">
+    <link rel="stylesheet" href="styles/slider.css">
+</head>
+<body>
     <nav class="nav-wrapper" aria-label="Nawigacja główna strony">
-      <button
-        class="mobile-nav-icon"
-        type="button"
+        <button class="mobile-nav-icon" type="button"
         aria-controls="mobile-menu"
         aria-expanded="false"
-        aria-label="Otwórz menu"
-      >
-        <i class="bi bi-list"></i>
-      </button>
-      <div class="nav-bar" id="main-nav-bar">
-        <div class="brand">
-          <a href="#home-nav">
-            <img
-              id="logo"
-              src="./imges/kloszart.png"
-              alt="logo Teatru Studenckiego Kloszart"
-          /></a>
+        aria-label="Otwórz menu">
+          <i class="bi bi-list"></i>
+        </button>
+        <div class="nav-bar" id="main-nav-bar">
+            <div class="brand">
+            <a href="#home-nav">  <img id="logo" src="./imges/kloszart.png" alt="logo Teatru Studenckiego Kloszart"></a>
+            </div>
+            <a href="#about-us">O nas</a>
+            <a href="#events">Wydarzenia</a>
+            <div class="nav-drop-down">
+            <a class="drop-down-btn" href="#nav-gallery">Galeria</a>
+                <div class="drop-down-container">
+                    <a href="photo-gallery.html">zdjęcia</a>
+                    <a href="https://www.youtube.com/@kloszart5603/videos">filmy</a>
+                    <a href="impro.html">improwizacje</a>
+                    <a href="art.html">sztuka</a>
+                </div>
+            </div>
+            <a href="#info">Kontakt</a>
         </div>
-        <a href="#about-us">O nas</a>
-        <a href="#events">Wydarzenia</a>
-        <div class="nav-drop-down">
-          <a class="drop-down-btn" href="#nav-gallery">Galeria</a>
-          <div class="drop-down-container">
-            <a href="photo-gallery.html">zdjęcia</a>
-            <a href="https://www.youtube.com/@kloszart5603/videos">filmy</a>
-            <a href="impro.html">improwizacje</a>
-            <a href="art.html">sztuka</a>
-          </div>
-        </div>
-        <a href="#info">Kontakt</a>
-      </div>
-      <div class="mobile-nav-bar-modal">
-        <div class="mobile-nav-head">
-          <div class="brand">
-            <a href="#home-nav">
-              <img id="logo" src="./imges/kloszart.png" alt="logo kloszartu" />
-            </a>
-          </div>
-          <p>KLOSZART</p>
-        </div>
+        <div class="mobile-nav-bar-modal">
+            <div class="mobile-nav-head">
+                    <div class="brand"><a href="#home-nav">  <img id="logo" src="./imges/kloszart.png" alt="logo kloszartu"> </a></div>
+                    <p>KLOSZART</p>
+            </div>
 
-        <div class="mobile-nav-items">
-          <a href="#about-us">O nas</a>
-          <a href="#events">Wydarzenia</a>
-          <a href="#nav-gallery">Galeria</a>
-          <a href="#info">Kontakt</a>
-        </div>
+            <div class="mobile-nav-items">
+                    <a href="#about-us">O nas</a>
+                    <a href="#events">Wydarzenia</a>
+                    <a href="#nav-gallery">Galeria</a>
+                    <a href="#info">Kontakt</a>
+            </div>
 
-        <hr class="mobile-hr-spacer" />
+            <hr class="mobile-hr-spacer">
 
-        <div class="mobile-nav-media">
-          <a href="https://www.instagram.com/kloszart/">Instagram</a>
-          <a href="https://www.facebook.com/kloszart/">Facebook</a>
-          <a href="https://www.youtube.com/@kloszart5603">Youtube</a>
-        </div>
+            <div class="mobile-nav-media">
+                <a href="https://www.instagram.com/kloszart/">Instagram</a>
+                <a href="https://www.facebook.com/kloszart/">Facebook</a>
+                <a href="https://www.youtube.com/@kloszart5603">Youtube</a>
+            </div>
 
-        <div class="mobile-nav-exit">
-          <i class="bi bi-x" aria-label="Zamknij menu"></i>
-        </div>
-      </div>
+            <div class="mobile-nav-exit">
+                <i class="bi bi-x" aria-label="Zamknij menu"></i>
+            </div>
+        </div> 
     </nav>
-    <header class="main decline-section" id="home-nav">
-      <div class="statue-container">
-        <img
-          class="statue-img"
-          src="./imges/landing_img.webp"
-          alt="Statue of Young Boy, he is holding a skull"
-        />
-      </div>
-      <div class="home-wrap">
-        <div class="panel">
-          <nav class="media" aria-label=" Nasze social media">
-            <a aria-label="Instagram" href="#"
-              ><svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                class="lucide lucide-instagram-icon lucide-instagram"
-              >
-                <rect width="20" height="20" x="2" y="2" rx="5" ry="5" />
-                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
-                <line x1="17.5" x2="17.51" y1="6.5" y2="6.5" /></svg
-            ></a>
-            <a aria-label="Youtube" href="#"
-              ><svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="29"
-                height="29"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                class="lucide lucide-youtube-icon lucide-youtube"
-              >
-                <path
-                  d="M2.5 17a24.12 24.12 0 0 1 0-10 2 2 0 0 1 1.4-1.4 49.56 49.56 0 0 1 16.2 0A2 2 0 0 1 21.5 7a24.12 24.12 0 0 1 0 10 2 2 0 0 1-1.4 1.4 49.55 49.55 0 0 1-16.2 0A2 2 0 0 1 2.5 17"
-                />
-                <path d="m10 15 5-3-5-3z" /></svg
-            ></a>
-            <a aria-label="Facebook" href="#"
-              ><svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                class="lucide lucide-facebook-icon lucide-facebook"
-              >
-                <path
-                  d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"
-                /></svg
-            ></a>
-          </nav>
+    <header class="main decline-section" id="home-nav">  
+        <div class="statue-container ">
+            <img class="statue-img " src="./imges/landing_img.webp" alt="Statue of Young Boy, he is holding a skull">
         </div>
-        <div class="caption-container">
-          <h1 class="caption" aria-label="Nazwa Teatru Studenckiego Kloszart">
-            KLOSZART
-          </h1>
+        <div class="home-wrap">
+            <div class="panel" >  
+                <nav class="media" aria-label=" Nasze social media">
+                        <a aria-label="Instagram" href="#"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-instagram-icon lucide-instagram"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg></a>
+                        <a aria-label="Youtube" href="#"><svg xmlns="http://www.w3.org/2000/svg" width="29" height="29" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-youtube-icon lucide-youtube"><path d="M2.5 17a24.12 24.12 0 0 1 0-10 2 2 0 0 1 1.4-1.4 49.56 49.56 0 0 1 16.2 0A2 2 0 0 1 21.5 7a24.12 24.12 0 0 1 0 10 2 2 0 0 1-1.4 1.4 49.55 49.55 0 0 1-16.2 0A2 2 0 0 1 2.5 17"/><path d="m10 15 5-3-5-3z"/></svg></a>
+                        <a aria-label="Facebook" href="#"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-facebook-icon lucide-facebook"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
+                </nav>
+            </div>
+            <div class="caption-container">
+                <h1 class="caption" aria-label="Nazwa Teatru Studenckiego Kloszart">KLOSZART</h1>
+            </div> 
         </div>
-      </div>
-      <h2 class="middle-caption split-text">Teatr <br />offowy</h2>
-      <button class="contact-btn modal-btn-js">Napisz</button>
+        <h2 class="middle-caption split-text"> Teatr <br>offowy</h2>
+        <button class="contact-btn modal-btn-js">Napisz</button>
     </header>
     <main>
-      <section class="stack-main" id="about-us">
-        <div class="stack-section">
-          <div class="split">
-            <p class="text-animation">
-              Najczęściej działamy teatralnie, więc „Teatr Kloszart” pasuje do
-              nas idealnie. Nie zamykamy się jednak w jednej formie —
-              improwizujemy, kręcimy krótkie filmy, tworzymy wizualnie i
-              fotograficznie. Można powiedzieć, że nie ma dnia, byśmy nie knuli
-              czegoś artystycznego.
-            </p>
+        <section class="stack-main" id="about-us">
+            <div class="stack-section ">
+            <div class="split">
+                <p class="text-animation"> Najczęściej działamy teatralnie, więc „Teatr Kloszart” pasuje do nas idealnie. Nie zamykamy się jednak w jednej formie — improwizujemy, kręcimy krótkie filmy, tworzymy wizualnie i fotograficznie. Można powiedzieć, że nie ma dnia, byśmy nie knuli czegoś artystycznego.</p>
             <p class="stack-container-text" id="show-up-text">
-              <span class="show-up-text-1">Uroczyście</span>
-              <span class="show-up-text-2">przysięgamy,</span>
-              <span class="show-up-text-3">że knujemy</span>
-              <span class="show-up-text-4">coś artystycznego!</span>
+                <span class="show-up-text-1">Uroczyście</span>
+                <span class="show-up-text-2">przysięgamy,</span>
+                <span class="show-up-text-3">że knujemy</span>
+                <span class="show-up-text-4">coś artystycznego!</span>
             </p>
-          </div>
-          <div class="stack-container">
-            <div class="stack-item">
-              <img
-                src="imges/stack-img/485971988_2457175157947067_9174137711431420094_n.jpg"
-                alt=""
-                class="stack-img"
-              />
             </div>
-            <div class="stack-item">
-              <img
-                src="imges/stack-img/474758472_1007284468098727_3953538719578172248_n.jpg"
-                alt=""
-                class="stack-img"
-              />
+            <div class="stack-container ">
+                <div class="stack-item"> <img src="imges/stack-img/485971988_2457175157947067_9174137711431420094_n.jpg" alt="" class="stack-img"></div>
+                <div class="stack-item"> <img src="imges/stack-img/474758472_1007284468098727_3953538719578172248_n.jpg" alt="" class="stack-img"></div>
+                <div class="stack-item"> <img src="imges/stack-img/484993605_2457927817871801_8515100237601601049_n.jpg" alt="" class="stack-img"></div>
+                <div class="stack-item "> <img src="imges/stack-img/stackIMG_4.jpg" alt="" class="stack-img"></div>
             </div>
-            <div class="stack-item">
-              <img
-                src="imges/stack-img/484993605_2457927817871801_8515100237601601049_n.jpg"
-                alt=""
-                class="stack-img"
-              />
             </div>
-            <div class="stack-item">
-              <img
-                src="imges/stack-img/stackIMG_4.jpg"
-                alt=""
-                class="stack-img"
-              />
-            </div>
-          </div>
-        </div>
-      </section>
-      <section>
-        <div class="swiper-shell" id="nav-gallery">
-          <div class="swiper my-cards-swiper">
+        </section>
+        <section>
+            <div class="swiper-shell" id="nav-gallery">
+            <div class="swiper my-cards-swiper">
             <div class="swiper-wrapper">
-              <!-- Slides -->
-              <div class="swiper-slide">
+                <!-- Slides -->
+                <div class="swiper-slide">
                 <div class="card">
-                  <img class="card-img" src="./imges/ekipaKLOSZ.png" alt="" />
-                  <div class="card-spacer"></div>
-                  <div class="card-content">
-                    <h3>Nabór</h3>
-                    <div class="card-paragraph">
-                      <p>
-                        Masz w sobie duże pokłady kreatywności? Potrzebę, aby
-                        oddać się sztuce? Ogrom chęci do działania w naszym
-                        szalonym, artystycznym światku? Zapraszamy Cię na
-                        <a
-                          href="https://www.facebook.com/events/1175444871102852?locale=pl_PL"
-                          style="
-                            font-weight: bold;
-                            color: var(--info);
-                            text-decoration: underline;
-                          "
-                          >nabór</a
-                        >
-                        DO KLOSZARTU!
-                      </p>
+                    <img class="card-img" src="./imges/ekipaKLOSZ.png" alt="">
+                    <div class="card-spacer"></div>
+                        <div class="card-content">
+                            <h3>Nabór</h3>
+                            <div class="card-paragraph">
+                            <p>Masz w sobie duże pokłady kreatywności? Potrzebę, aby oddać się sztuce? Ogrom chęci do działania w naszym szalonym, artystycznym światku? Zapraszamy Cię na <a href="https://www.facebook.com/events/1175444871102852?locale=pl_PL" style="font-weight: bold; color: var(--info); text-decoration:underline; ">nabór</a> DO KLOSZARTU!</p>
+                            </div>
+                            <a href="./recruitment.html" class="card-btn"> Zobacz więcej</a>
+                        </div>
                     </div>
-                    <a href="./recruitment.html" class="card-btn">
-                      Zobacz więcej</a
-                    >
-                  </div>
                 </div>
-              </div>
-              <div class="swiper-slide">
+                <div class="swiper-slide">
                 <div class="card">
-                  <img src="./imges/improKLOSZ.png" alt="" />
-                  <div class="card-spacer"></div>
-                  <div class="card-content">
-                    <h3>Impro</h3>
-                    <div class="card-paragraph">
-                      <p>
-                        Impro, czyli improwizacja teatralna, to niezwykle
-                        dynamiczna i kreatywna forma sztuki scenicznej.
-                        Improwizacja polega na tworzeniu spektakli, historii,
-                        scen, piosenek i dialogów, jednym słowem wszystkiego co
-                        składa się na spektakl, na żywo, bez wcześniejszego
-                        przygotowania.
-                      </p>
+                    <img src="./imges/improKLOSZ.png" alt="">
+                                    <div class="card-spacer"></div>
+                        <div class="card-content">
+                            <h3>Impro</h3>
+                            <div class="card-paragraph">
+                            <p>Impro, czyli improwizacja teatralna, to niezwykle dynamiczna i kreatywna forma sztuki scenicznej. Improwizacja polega na tworzeniu spektakli, historii, scen, piosenek i dialogów, jednym słowem wszystkiego co składa się na spektakl, na żywo, bez wcześniejszego przygotowania.  </p>
+                            </div>
+                            <a href="./impro.html" class="card-btn"> Zobacz więcej</a>
+                        </div>
                     </div>
-                    <a href="./impro.html" class="card-btn"> Zobacz więcej</a>
-                  </div>
                 </div>
-              </div>
-              <div class="swiper-slide">
+                <div class="swiper-slide">
                 <div class="card">
-                  <img src="./imges/photoGallery/galleryPhoto-22.png" alt="" />
-                  <div class="card-spacer"></div>
-                  <div class="card-content">
-                    <h3>Spektakle</h3>
-                    <div class="card-paragraph">
-                      <p>
-                        Każdy spektakl to podróż w nieznane — moment, gdy słowa
-                        ożywają, emocje pulsują, a publiczność staje się częścią
-                        magicznego świata, który tworzymy razem na scenie. Od
-                        klasyki po współczesne eksperymenty, każda premiera to
-                        nowa historia czekająca na opowiedzenie.
-                      </p>
+                    <img src="./imges/photoGallery/galleryPhoto-22.png" alt="">
+                                    <div class="card-spacer"></div>
+                        <div class="card-content">
+                            <h3>Spektakle</h3>
+                            <div class="card-paragraph">
+                            <p>Każdy spektakl to podróż w nieznane — moment, gdy słowa ożywają, emocje pulsują, a publiczność staje się częścią magicznego świata, który tworzymy razem na scenie. Od klasyki po współczesne eksperymenty, każda premiera to nowa historia czekająca na opowiedzenie.</p>
+                            </div>
+                            <a href="./art.html" class="card-btn"> Zobacz więcej</a>
+                        </div>
                     </div>
-                    <a href="./art.html" class="card-btn"> Zobacz więcej</a>
-                  </div>
                 </div>
-              </div>
-              <div class="swiper-slide">
+                <div class="swiper-slide">
                 <div class="card">
-                  <img src="./imges/filmy.png" alt="" />
-                  <div class="card-spacer"></div>
-                  <div class="card-content">
-                    <h3>Filmy</h3>
-                    <div class="card-paragraph">
-                      <p>
-                        Kadr po kadrze opowiadamy historie, które nie mieszczą
-                        się na scenie. Nasze krótkie formy filmowe to
-                        eksperymenty z narracją, wizualną estetyką i emocjami —
-                        każdy projekt to nowa przygoda w świecie ruchomego
-                        obrazu.
-                      </p>
+                    <img src="./imges/filmy.png" alt="">
+                                    <div class="card-spacer"></div>
+                        <div class="card-content">
+                            <h3>Filmy</h3>
+                            <div class="card-paragraph">
+                            <p>Kadr po kadrze opowiadamy historie, które nie mieszczą się na scenie. Nasze krótkie formy filmowe to eksperymenty z narracją, wizualną estetyką i emocjami — każdy projekt to nowa przygoda w świecie ruchomego obrazu.</p>
+                            </div>
+                            <a href="https://www.youtube.com/@kloszart5603/videos" class="card-btn"> Zobacz więcej</a>
+                        </div>
                     </div>
-                    <a
-                      href="https://www.youtube.com/@kloszart5603/videos"
-                      class="card-btn"
-                    >
-                      Zobacz więcej</a
-                    >
-                  </div>
                 </div>
-              </div>
-              <div class="swiper-slide">
+                <div class="swiper-slide">
                 <div class="card">
-                  <img src="./imges/zdjęcia.png" alt="" />
-                  <div class="card-spacer"></div>
-                  <div class="card-content">
-                    <h3>Zdjęcia</h3>
-                    <div class="card-paragraph">
-                      <p>
-                        Zatrzymane w kadrze momenty prób, spektakli i
-                        codziennego życia teatru. Każde zdjęcie opowiada
-                        fragment naszej historii — od pierwszych prób po wielkie
-                        premiery, od za kulisami po sceniczne emocje.
-                      </p>
+                    <img src="./imges/zdjęcia.png" alt="">
+                                    <div class="card-spacer"></div>
+                        <div class="card-content">
+                            <h3>Zdjęcia</h3>
+                            <div class="card-paragraph">
+                            <p>Zatrzymane w kadrze momenty prób, spektakli i codziennego życia teatru. Każde zdjęcie opowiada fragment naszej historii — od pierwszych prób po wielkie premiery, od za kulisami po sceniczne emocje.</p>
+                            </div>
+                            <a href="photo-gallery.html" class="card-btn"> Zobacz więcej</a>
+                        </div>
                     </div>
-                    <a href="photo-gallery.html" class="card-btn">
-                      Zobacz więcej</a
-                    >
-                  </div>
                 </div>
-              </div>
             </div>
-          </div>
-          <div class="swiper-pagination"></div>
-          <div class="swiper-nav">
-            <div class="swiper-left-btn">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="35"
-                height="35"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              >
-                <path d="m15 18-6-6 6-6" />
-              </svg>
             </div>
-            <div class="swiper-right-btn">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="35"
-                height="35"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              >
-                <path d="m9 18 6-6-6-6" />
-              </svg>
+            <div class="swiper-pagination "></div>
+            <div class="swiper-nav">
+                <div class="swiper-left-btn">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg> 
+                </div>
+                <div class="swiper-right-btn">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" ><path d="m9 18 6-6-6-6"/></svg>
+                </div>
             </div>
-          </div>
-        </div>
-      </section>
+            </div>
+        </section>
 
-      <section class="comment-section">
-        <div class="comment-container">
-          <div class="comment-wrapper"></div>
-        </div>
-      </section>
+        <section class="comment-section">
+            <div class="comment-container">
+                <div class="comment-wrapper">
 
-      <section>
-        <div class="event-wrapper" id="horizontal-scroll">
-          <div class="event-section horizontal-section" id="events">
-            <div class="calendar-container">
-              <h2 class="event-text text-animation">spektakle</h2>
+                </div>
+            </div>
+        </section>
 
-              <video
-                class="background-video grow-section js-lazy-video"
-                muted
-                loop
-                playsinline
-                preload="none"
-                poster="imges/video/poster.jpg"
-              >
-                <source
-                  data-src="imges/video/Zagubieni  Zwiastun.mp4"
-                  type="video/mp4"
-                />
-              </video>
+        <section>
+            <div class="event-wrapper" id="horizontal-scroll" >
+            <div class="event-section horizontal-section" id="events">
+                <div class="calendar-container ">
+                    <h2 class="event-text text-animation">spektakle</h2>
+                    
+                    <video class="background-video grow-section js-lazy-video" 
+                    muted loop playsinline
+                    preload="none"
+                    poster="imges/video/poster.jpg"
+                    >
+                    <source data-src="imges/video/Zagubieni  Zwiastun.mp4" type="video/mp4">
+                    </video>
 
-              <button class="open-calendar-btn hover-fill-btn">
-                kalendarz
-              </button>
+                    <button class="open-calendar-btn hover-fill-btn">kalendarz</button>
+                </div>
             </div>
-          </div>
-          <div class="contact-container horizontal-section" id="info">
-            <div class="informations-container">
-              <div class="information-item">
-                <h3>Adres:</h3>
-                <p>Kurta Obitza 10-001</p>
-                <p>Olsztyn</p>
-              </div>
-              <div class="information-item" id="item-separator">
-                <h3>Kontakt:</h3>
-                <p>757-759-857</p>
-                <p>loremipsum@gmail.com</p>
-              </div>
-              <div class="information-item">
-                <h3>Otwarte:</h3>
-                <p>Pon-Pt</p>
-                <p>8:00 - 16:00</p>
-              </div>
+            <div class="contact-container horizontal-section"  id="info" >
+                <div class="informations-container" >
+                    <div class="information-item" >
+                        <h3 >Adres:</h3>
+                        <p>Kurta Obitza 10-001</p> <p>Olsztyn</p>
+                    </div>
+                    <div class="information-item" id="item-separator">
+                        <h3 >Kontakt:</h3>
+                        <p>757-759-857</p>
+                        <p>loremipsum@gmail.com</p>
+                    </div>
+                    <div class="information-item">
+                        <h3 >Otwarte:</h3>
+                        <p>Pon-Pt</p>
+                        <p>8:00 - 16:00</p>
+                    </div>
+                </div> 
+                <div class="map-container">
+                    <img src="imges/fishing-boy.png" alt="">
+                    <iframe title="mapa do Teatru Studenckiego Kloszart" class="map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2359.359226526069!2d20.456990889885805!3d53.74748632596416!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46e27f4beed6fd65%3A0xa8eb43e7c48baf1b!2sKurta%20Obitza%2C%2010-001%20Olsztyn!5e0!3m2!1spl!2spl!4v1763136375348!5m2!1spl!2spl" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
             </div>
-            <div class="map-container">
-              <img src="imges/fishing-boy.png" alt="" />
-              <iframe
-                title="mapa do Teatru Studenckiego Kloszart"
-                class="map"
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2359.359226526069!2d20.456990889885805!3d53.74748632596416!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46e27f4beed6fd65%3A0xa8eb43e7c48baf1b!2sKurta%20Obitza%2C%2010-001%20Olsztyn!5e0!3m2!1spl!2spl!4v1763136375348!5m2!1spl!2spl"
-                width="600"
-                height="450"
-                style="border: 0"
-                allowfullscreen=""
-                loading="lazy"
-                referrerpolicy="no-referrer-when-downgrade"
-              ></iframe>
             </div>
-          </div>
-        </div>
-      </section>
+        </section>
     </main>
-    <footer
-      class="footer-wrapper"
-      style="clip-path: polygon(0% 0, 100% 0%, 100% 100%, 0 100%)"
-      id="footer"
-    >
-      <div class="footer-container">
-        <div class="footer-content">
-          <div class="footer-references">
+    <footer class="footer-wrapper" style="clip-path: polygon(0% 0, 100% 0%, 100% 100%, 0 100%);" id="footer">      
+    <div class="footer-container">
+    <div class="footer-content">
+        <div class="footer-references">
             <div class="footer-reference">
-              <p>O nas</p>
-              <p>Repertuar</p>
-              <p>Informacje</p>
-              <p>Kontakt</p>
+                <p>O nas</p>
+                <p>Repertuar</p>
+                <p>Informacje</p>
+                <p>Kontakt</p>
             </div>
             <div class="footer-reference">
-              <p>Instagram</p>
-              <p>Facebook</p>
-              <p>Youtube</p>
-              <p>TikTok</p>
+                <p>Instagram</p>
+                <p>Facebook</p>
+                <p>Youtube</p>
+                <p>TikTok</p>
             </div>
-          </div>
-          <h1 class="footer-header">Kloszart</h1>
-          <div class="footer-copyright">
+        </div>
+        <h1 class="footer-header">Kloszart</h1>
+        <div class="footer-copyright">
             <p>© Developed and designed by Rafał Kazberuk</p>
-          </div>
         </div>
-      </div>
+    </div>
+    </div>    
     </footer>
-
-    <div class="contact-modal-background modal-js" hidden>
-      <form class="contact-modal-content" autocomplete="on">
-        <button
-          type="button"
-          class="contact-modal-exit modal-exit-js"
-          aria-label="Zamknij"
-        >
-          X
-        </button>
+    
+     <div class="contact-modal-background modal-js" hidden>
+        <form  class="contact-modal-content" autocomplete="on" >
+             <button type="button" class="contact-modal-exit modal-exit-js" aria-label="Zamknij">
+                X
+            </button>
         <h2 id="contact-modal-title">Wiadomość</h2>
-        <div class="contact-element">
-          <p>Imię :</p>
-          <input name="name" type="text" id="sender-name" required />
-        </div>
-        <div class="contact-element">
-          <p>Email :</p>
-          <input name="email" type="email" id="email" required />
-        </div>
-        <div class="contact-element">
-          <p>Numer :</p>
-          <input name="phone" type="tel" id="phone-number" />
-        </div>
-        <div class="contact-element" id="contact-message">
-          <p>Wiadomość:</p>
-          <textarea
-            name="message"
-            type="text"
-            autocomplete="off"
-            id="message"
-            required
-          ></textarea>
-        </div>
-        <button class="contact-modal-btn" type="submit">Wyślij</button>
-      </form>
+            <div class="contact-element">
+                <p>Imię :</p>
+                <input name="name" type="text" id="sender-name" required >
+            </div>
+            <div class="contact-element">
+                <p>Email :</p>
+                <input name="email" type="email" id="email" required >
+            </div>
+            <div class="contact-element">
+                <p>Numer :</p>
+                <input name="phone" type="tel" id="phone-number">
+            </div>
+            <div class="contact-element " id="contact-message">
+                <p>Wiadomość:</p>
+                <textarea name="message" type="text" autocomplete="off" id="message" required ></textarea>
+          
+            </div>
+            <button class="contact-modal-btn" type="submit">Wyślij</button>
+        </form>
     </div>
 
-    <div class="modal-background calendar" hidden>
-      <div class="modal-content">
-        <button class="modal-exit">X</button>
-        <iframe
-          class="modal-content-iframe"
-          src="https://calendar.google.com/calendar/embed?src=rafalkazberuk7%40gmail.com&ctz=Europe%2FWarsaw"
-          style="border: 0"
-          width="800"
-          height="600"
-          frameborder="0"
-          scrolling="no"
-        ></iframe>
-      </div>
+<div class="modal-background calendar" hidden>
+    <div class="modal-content">
+         <button class="modal-exit">X</button>
+         <iframe class="modal-content-iframe" src="https://calendar.google.com/calendar/embed?src=rafalkazberuk7%40gmail.com&ctz=Europe%2FWarsaw" style="border: 0" width="800" height="600" frameborder="0" scrolling="no"></iframe>
     </div>
+</div>
 
+
+
+    
+   
     <script type="module" src="scripts/index.js"></script>
-  </body>
+  
+    
+   
+</body>
 </html>

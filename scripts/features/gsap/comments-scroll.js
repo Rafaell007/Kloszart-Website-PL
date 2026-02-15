@@ -13,49 +13,14 @@ window.addEventListener("load", () => {
       paused: false
     });
   });
+  // Stały automatyczny ruch: lewo → prawo, niezależnie od scrolla myszy/toucha.
+  // W tym helperze dodatni kierunek timeline'u przesuwa elementy "w lewo",
+  // więc do ruchu "w prawo" ustawiamy ujemny timeScale.
   gsap.set(loops, {
     time: (i) => (i % 2) + 1,
-    timeScale: 0
+    timeScale: -0.6
   });
   gsap.set(columns, { autoAlpha: 1 });
-  Observer.create({
-    target: window,
-    type: "wheel, touch",
-    onUp: () => {
-      gsap
-        .timeline()
-        .to(loops, {
-          timeScale: (i) => (i % 2 > 0 ? 2 : 2.5),
-          overwrite: true,
-          duration: 0.2
-        })
-        .to(
-          loops,
-          {
-            timeScale: 0,
-            ease: "power1.in"
-          },
-          1
-        );
-    },
-    onDown: () => {
-      gsap
-        .timeline()
-        .to(loops, {
-          timeScale: (i) => (i % 2 > 0 ? -2 : -2.5),
-          overwrite: true,
-          duration: 0.2
-        })
-        .to(
-          loops,
-          {
-            timeScale: 0,
-            ease: "power1.in"
-          },
-          1
-        );
-    }
-  });
 });
 
 /*
